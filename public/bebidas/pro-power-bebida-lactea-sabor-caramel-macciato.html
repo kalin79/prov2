@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animación de Flechas con GSAP</title>
+    <link rel="stylesheet" href="../css/estilos.css">
+</head>
+
+<body>
+    <h1 class="sr-only">Pro activo</h1>
+    <div class="bodyContainer">
+        <div class="navContainer">
+            <div class="containerContent">
+                <div class="gridContainer">
+                    <div>
+                        <div class="logoMenu">
+                            <img src="../images/logoPRO.svg" alt="PRO" />
+                        </div>
+                    </div>
+                    <div>
+                        <div class="hambMenu">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="internaProductoContainer">
+            <div class="luzBox">
+                <img src="../images/luz.webp" alt="" />
+            </div>
+            <div class="internaHeaderContainer">
+                <div class="infoHeaderContainer">
+                    <div class="containerContent">
+                        <h2>Sabor Dark Chocolate</h2>
+                        <h1><span>pro</span>power</h1>
+                    </div>
+                </div>
+                <div class="flechaBox Izq">
+                    <img src="../images/flecharoja.svg" alt="Pro" />
+                </div>
+                <div class="flechaBox Der">
+                    <img src="../images/flecharoja.svg" alt="Pro" />
+                </div>
+                <div class="flechaTBox Der">
+                    <img src="../images/flechaT.svg" alt="Pro" />
+                </div>
+                <div class="bannerContainer">
+                    <img src="../images/bannerPro1.webp" alt="Pro Power Dark Chocolate" />
+                </div>
+                <div class="productoHeaderImg">
+                    <img src="../images/producto1.webp" alt="Pro Power Dark Chocolate" />
+                </div>
+            </div>
+            <div class="seccionInformacionBox">
+                <div class="flechaTBox">
+                    <img src="../images/flechaT.svg" alt="Pro" />
+                </div>
+                <div class="containerContent">
+                    <div class="gridContentInfo">
+                        <div>
+                            <div>
+                                <h2>30</h2>
+                            </div>
+                            <div>
+                                <img src="../images/g.svg" alt="gramos" />
+                                <h4>PROTEÍNA</h4>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <div class="iconBox">
+                                    <img src="../images/cerebro.svg" alt="Mente siempre enfocada" />
+                                </div>
+                                <p>Mente siempre <br />
+                                    enfocada</p>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <div class="iconBox">
+                                    <img src="../images/energia.svg" alt="Mente siempre enfocada" />
+                                </div>
+                                <p>
+                                    Energía para <br />
+                                    todo tu día
+                                </p>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <div class="iconBox">
+                                    <img src="../images/fuerza.svg" alt="Mente siempre enfocada" />
+                                </div>
+                                <p>
+                                    Vitalidad PRO <br />
+                                    para romper <br />
+                                    tus límites
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="seccionProposito">
+
+            </div>
+            <div class="seccionTabsInfo">
+                <div class="containerContent">
+                    <div class="containerTabInfo">
+                        <div class="headerTabs">
+                            <div>
+                                <button onclick="mostrarAcordion(1,2)" class="tabBtn-1">
+                                    <h3>INFORMACIÓN NUTRICIONAL</h3>
+                                    <div></div>
+                                </button>
+                                <div class="bodyTabs tab-1">
+                                    <div>
+                                        <div class="centerInfoBox">
+                                            <div class="headerInfoTable">
+                                                <h2>
+                                                    Porción: 1 Botella (320 ml) <br />
+                                                    Porciones por envase: 1
+                                                </h2>
+                                                <div class="subtitleBox">
+                                                    <h2>Energía (Kcal/kJ)</h2>
+                                                    <h2>242/1025</h2>
+                                                </div>
+                                            </div>
+                                            <div class="table-responsive">
+                                                <table class="table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th scope="col">#</th>
+                                                            <th scope="col">100 mL</th>
+                                                            <th scope="col">320 mL</th>
+                                                            <th scope="col">% RD *</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <th>
+                                                                <h2>Grasa total (g)</h2>
+                                                            </th>
+                                                            <td>0.9</td>
+                                                            <td>2.8</td>
+                                                            <td>4%</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>
+                                                                <h3>Grasa saturada (g)</h3>
+                                                            </th>
+                                                            <td>0.5</td>
+                                                            <td>1.6</td>
+                                                            <td>8%</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>
+                                                                <h3>Grasa trans (g)</h3>
+                                                            </th>
+                                                            <td>0</td>
+                                                            <td>0</td>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>
+                                                                <h2>Sodio (mg)</h2>
+                                                            </th>
+                                                            <td>70</td>
+                                                            <td>224</td>
+                                                            <td>11%</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>
+                                                                <h2>Carbohidratos (g)</h2>
+                                                            </th>
+                                                            <td>7.1</td>
+                                                            <td>22.7</td>
+                                                            <td>8%</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>
+                                                                <h3>Azúcares totales (g)</h3>
+                                                            </th>
+                                                            <td>4.4</td>
+                                                            <td>14.1</td>
+                                                            <td>16%</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>
+                                                                <h3>Lactosa (g)**</h3>
+                                                            </th>
+                                                            <td>0</td>
+                                                            <td>0</td>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>
+                                                                <h3>Azúcares añadidos (g)</h3>
+                                                            </th>
+                                                            <td>0</td>
+                                                            <td>0</td>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>
+                                                                <h2>Fibra dieteria (g)</h2>
+                                                            </th>
+                                                            <td>1.7</td>
+                                                            <td>5.4</td>
+                                                            <td>19%</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>
+                                                                <h2>Proteínas (g)</h2>
+                                                            </th>
+                                                            <td>9.4</td>
+                                                            <td>30.1</td>
+                                                            <td>60%</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td colspan="4">
+                                                                <hr />
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>
+                                                                <h2>Calcio (mg)</h2>
+                                                            </th>
+                                                            <td>246</td>
+                                                            <td>787</td>
+                                                            <td>79%</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>
+                                                                <h2>Fósforo (mg)</h2>
+                                                            </th>
+                                                            <td>176</td>
+                                                            <td>564</td>
+                                                            <td>81%</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>
+                                                                <h2>Zinc (mg)</h2>
+                                                            </th>
+                                                            <td>1.3</td>
+                                                            <td>4.2</td>
+                                                            <td>30%</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>
+                                                                <h2>Vitamina A</h2>
+                                                            </th>
+                                                            <td>75</td>
+                                                            <td>240</td>
+                                                            <td>30%</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>
+                                                                <h2>Vitamina D</h2>
+                                                            </th>
+                                                            <td>0.5</td>
+                                                            <td>1.6</td>
+                                                            <td>32%</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>
+                                                                <h2>Vitamina B6</h2>
+                                                            </th>
+                                                            <td>0.4</td>
+                                                            <td>1.3</td>
+                                                            <td>98%</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>
+                                                                <h2>Ácido Fólico (expresado como folato )</h2>
+                                                            </th>
+                                                            <td>75</td>
+                                                            <td>240</td>
+                                                            <td>60%</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td colspan="4">
+                                                                <hr />
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                                <p>
+                                                    Los porcentajes del Requerimiento Diario (%RD) indican en cuanto
+                                                    contribuye
+                                                    un
+                                                    nutriente en una porción de alimento para una dieta diaria. Se
+                                                    utilizan 2000
+                                                    kcal u 8370 kJ por día para consejos nutricionales generales. Aporte
+                                                    de
+                                                    nutrientes expresados como % RD según CODEX/FDA/UE.
+                                                </p>
+                                                <p>
+                                                    *** Límite de cuantificación < 0.1% </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <button onclick="mostrarAcordion(2,1)" class="tabBtn-2">
+                                    <h3>INGREDIENTES</h3>
+                                    <div></div>
+                                </button>
+                                <div class="bodyTabs tab-2">
+                                    <div>
+                                        <div class="centerInfoBox">
+                                            <p>
+                                                Leche descremada, Agua, Proteína concentrada de leche, Leche cruda,
+                                                Fuente de fibra polidextrosa, Cacao en polvo, Emulsionante mono y
+                                                diglicéridos de ácidos grasos sin 471, Emulsionante lecitina de soya sin
+                                                322i, Estabilizador carragenina sin 407, Estabilizador goma guar sin
+                                                412, Estabilizador hidrogenofosfato disódico sin 339ii, Leche descremada
+                                                en polvo, Espesante goma gelán sin 418, Regulador de acidez citrato
+                                                trisódico sin 331iii, Saborizante artificial a melaza, Saborizante
+                                                artificial a vainilla, Fuente de hierro pirofosfato férrico, Edulcorante
+                                                sucralosa sin 955, Vitamina a, Vitamina d, Vitamina e, Vitamina b1,
+                                                Vitamina b3, Vitamina b6, Vitamina b12, ácido fólico, Biotina, Enzima
+                                                lactasa, Fuente de zinc sulfato de zinc
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="seccionFamilia">
+                <div class="containerContent">
+                    <div class="gridContainer">
+                        <div>
+                            <div class="boxReja">
+                                <img src="../images/reja3.webp" alt="Conoce toda la Familia" />
+                            </div>
+                            <h3>
+                                conoce <br />
+                                toda <br />
+                                <span>la familia <br />
+                                    pro</span>
+                            </h3>
+                        </div>
+                        <div>
+                            <a href="/" class="cardFamilia">
+                                <div class="cardBody">
+                                    <img src="../images/ppro1.webp" alt="" />
+                                </div>
+                                <div class="cardFooter">
+                                    <h3>
+                                        <span>pro</span>power
+                                    </h3>
+                                    <p>
+                                        Dark <br />Chocolate
+                                    </p>
+                                </div>
+                            </a>
+                            <a href="/" class="cardFamilia">
+                                <div class="cardBody">
+                                    <img src="../images/ppro2.webp" alt="" />
+                                </div>
+                                <div class="cardFooter">
+                                    <h3>
+                                        <span>pro</span>power
+                                    </h3>
+                                    <p>
+                                        Caramel <br />Maccchino
+                                    </p>
+                                </div>
+                            </a>
+                            <a href="/" class="cardFamilia">
+                                <div class="cardBody">
+                                    <img src="../images/ppro2.webp" alt="" />
+                                </div>
+                                <div class="cardFooter">
+                                    <h3>
+                                        <span>pro</span>power
+                                    </h3>
+                                    <p>
+                                        Yogurt Cuchareable <br />Sauco
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <div class="containerContent">
+                <div class="hashTagContainer">
+                    <h3>#hazlo<span>pro</span></h3>
+                </div>
+                <div class="navFooterContainer">
+                    <div>
+                        <img src="../images/logoPRO.svg" alt="Pro Activo" />
+                    </div>
+                    <div>
+                        <a href="/">Inicio</a>
+                        <a href="/">PRO POWER</a>
+                        <a href="/">PRO DAY</a>
+                    </div>
+                    <div>
+                        <a href="">
+                            <img src="../images/facebook.svg" alt="Facebook" />
+                        </a>
+                        <a href="">
+                            <img src="../images/instagram.svg" alt="Instagram" />
+                        </a>
+                        <a href="">
+                            <img src="../images/tiktok.svg" alt="TikTok" />
+                        </a>
+                        <a href="">
+                            <img src="../images/youtube.svg" alt="YouTube" />
+                        </a>
+                    </div>
+                </div>
+                <div class="legalContainer">
+                    <div>
+                        <p>Copyright © 2025 PRO - Todos los derechos reservados</p>
+                    </div>
+                    <div>
+                        <a href="/politica-de-privacidad.html">Política de privacidad</a>
+                    </div>
+                    <div>
+                        <a href="/terminos-y-condiciones.html">Términos y condiciones</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+    <script src="../js/mainInterno.js"></script>
+
+</body>
+
+</html>

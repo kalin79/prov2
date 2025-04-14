@@ -1,0 +1,1977 @@
+// Importa solo lo que necesites o todo Bootstrap
+@use "../../node_modules/bootstrap/scss/bootstrap";
+@use "../../node_modules/bootstrap/scss/mixins/banner" as *;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Space+Grotesk:wght@300..700&display=swap');
+
+
+$rojo: #ED1C24;
+$gris: #DDDDDD;
+$grisOscuro: #A6A8AB;
+$morado: #AC00FF;
+$marronClaro: #CA999A;
+// fuentes
+
+
+@font-face {
+    font-family: 'ROUND 8 FIVE';
+    src: url('../fonts/round8/ROUND8-FIVE.eot');
+    src: url('../fonts/round8/ROUND8-FIVE.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/round8/ROUND8-FIVE.woff2') format('woff2'),
+        url('../fonts/round8/ROUND8-FIVE.woff') format('woff'),
+        url('../fonts/round8/ROUND8-FIVE.ttf') format('truetype'),
+        url('../fonts/round8/ROUND8-FIVE.svg#ROUND8-FIVE') format('svg');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Round8Four';
+    src: url('../fonts/round8/ROUND8-FOUR.woff2') format('woff2'),
+        url('../fonts/round8/ROUND8-FOUR.woff') format('woff'),
+        url('../fonts/round8/ROUND8-FOUR.ttf') format('truetype'),
+        url('../fonts/round8/ROUND8-FOUR.svg#ROUND8-FOUR') format('svg'),
+        url('../fonts/round8/ROUND8-FOUR.eot?#iefix') format('embedded-opentype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'ROUND 8 SEVEN';
+    src: url('../fonts/round8/ROUND8-SEVEN.eot');
+    src: url('../fonts/round8/ROUND8-SEVEN.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/round8/ROUND8-SEVEN.woff2') format('woff2'),
+        url('../fonts/round8/ROUND8-SEVEN.woff') format('woff'),
+        url('../fonts/round8/ROUND8-SEVEN.ttf') format('truetype'),
+        url('../fonts/round8/ROUND8-SEVEN.svg#ROUND8-SEVEN') format('svg');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'ROUND 8 ONE';
+    src: url('../fonts/round8/ROUND8-ONE.eot');
+    src: url('../fonts/round8/ROUND8-ONE.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/round8/ROUND8-ONE.woff2') format('woff2'),
+        url('../fonts/round8/ROUND8-ONE.woff') format('woff'),
+        url('../fonts/round8/ROUND8-ONE.ttf') format('truetype'),
+        url('../fonts/round8/ROUND8-ONE.svg#ROUND8-ONE') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'ROUND 8 THREE';
+    src: url('../fonts/round8/ROUND8-THREE.eot');
+    src: url('../fonts/round8/ROUND8-THREE.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/round8/ROUND8-THREE.woff2') format('woff2'),
+        url('../fonts/round8/ROUND8-THREE.woff') format('woff'),
+        url('../fonts/round8/ROUND8-THREE.ttf') format('truetype'),
+        url('../fonts/round8/ROUND8-THREE.svg#ROUND8-THREE') format('svg');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // height: 100vh;
+    background-color: black;
+    // overflow: hidden;
+    overflow-x: hidden;
+}
+
+
+
+
+.navContainer {
+    position: fixed;
+    width: 100vw;
+    border: 0px solid blue;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    padding: .5rem 0;
+
+    .gridContainer {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 1rem;
+
+        >div {
+            &:nth-child(1) {
+                grid-column: 6 / span 2;
+                display: flex;
+                justify-content: center;
+
+                .logoMenu {
+                    width: 60px;
+
+                    img {
+                        width: 100%;
+                        height: auto;
+                        object-fit: contain;
+                    }
+                }
+            }
+
+            &:nth-child(2) {
+                grid-column: 11 / span 2;
+                display: flex;
+                justify-content: center;
+                align-items: flex-end;
+                flex-direction: column;
+
+                .hambMenu {
+                    width: 45px;
+
+                    >div {
+                        width: 100%;
+                        height: 4px;
+                        background: $gris;
+                        border-radius: 4px;
+                        margin-bottom: .25rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.containerContent {
+    padding: 0 2vw;
+}
+
+
+.carruselContainer {
+    position: relative;
+    width: 100vw;
+    height: 750px;
+    overflow: hidden;
+
+    @media screen and (min-width: 992px) {
+        height: 100vh;
+    }
+
+    .carruselItemsBanner {
+        display: flex;
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+        width: 100%;
+        height: 100%;
+
+        .itemBanner {
+            position: relative;
+        }
+    }
+
+
+    .controlBanner {
+        position: absolute;
+        bottom: 3rem;
+        right: 3rem;
+        border: 0px solid red;
+        z-index: 100;
+
+        button {
+            border: 0px solid white;
+            border-radius: 8px;
+            width: 40px;
+            height: 20px;
+            background: rgba(white, .35);
+            cursor: pointer;
+
+            @media screen and (min-width: 992px) {
+                width: 100px;
+                height: 20px;
+            }
+
+            &.active {
+                background: white
+            }
+        }
+    }
+
+    .loaderLogoContainer {
+        position: absolute;
+        z-index: 40;
+        border: 0px solid blue;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        .flechaContainer {
+            position: relative;
+            transform: translateY(-.6rem) translateX(.25rem);
+        }
+    }
+}
+
+.itemGallery {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 30;
+
+    &:before {
+        content: '';
+        background: rgba(black, .15);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: 100;
+    }
+}
+
+
+.palabrasContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Centra los textos horizontalmente */
+    gap: 10px;
+
+    h3 {
+        font-family: 'ROUND 8 FIVE', sans-serif;
+        font-weight: inherit;
+        font-style: italic;
+        font-size: 13.75rem;
+        opacity: 1;
+        line-height: .75em;
+        /* Inicialmente visible */
+        position: relative;
+        /* Necesario para el desplazamiento en GSAP */
+        white-space: nowrap;
+
+        /* Evita que las palabras se dividan en varias líneas */
+        /* Estilo para elementos en posiciones impares */
+        &:nth-child(odd) {
+            transform: translateX(-100%);
+        }
+
+        /* Estilo para elementos en posiciones pares */
+        &:nth-child(even) {
+            transform: translateX(100%);
+        }
+    }
+
+
+}
+
+.contenidoBannerMain {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    background: transparent;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 3;
+
+    .panelIzq {
+        width: 400px;
+        height: 100%;
+        background: $rojo;
+        overflow: hidden;
+        transform: translateX(-100vw);
+        display: none;
+
+
+        @media screen and (min-width: 1200px) {
+            width: 400px;
+        }
+
+        @media screen and (min-width: 1400px) {
+            width: 495px;
+        }
+
+        &.bgMorado {
+            background: $morado;
+        }
+
+        @media screen and (min-width: 992px) {
+            transform: translateX(-50vw);
+            display: block;
+        }
+    }
+
+    .panelDer {
+        height: 100%;
+        display: flex;
+        justify-content: flex-start;
+
+        .titularContainer {
+            border: 0px solid red;
+            margin-left: -6rem;
+            position: relative;
+
+            @media screen and (min-width: 768px) {
+                margin-left: 2rem;
+            }
+
+            @media screen and (min-width: 992px) {
+                margin-left: -5rem;
+            }
+
+            @media screen and (min-width: 1200px) {
+                margin-left: 0rem;
+            }
+
+            @media screen and (min-width: 1400px) {
+                margin-left: 2rem;
+            }
+
+            @media screen and (min-width: 1800px) {
+                margin-left: 4rem;
+            }
+
+            .centerInfo {
+                display: flex;
+                justify-content: flex-start;
+                gap: .25rem;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+
+                h2 {
+                    font-size: 6rem;
+                    color: white;
+                    font-family: 'Round8Four', sans-serif;
+                    font-weight: inherit;
+                    // font-style: italic;
+                    display: inherit;
+                    opacity: 0;
+
+                    @media screen and (min-width: 768px) {
+                        font-size: 9rem;
+                    }
+
+                    @media screen and (min-width: 992px) {
+                        font-size: 8rem;
+                    }
+
+                    @media screen and (min-width: 1200px) {
+                        font-size: 10.5rem;
+                    }
+
+                    @media screen and (min-width: 1400px) {
+                        font-size: 12rem;
+                    }
+
+                    @media screen and (min-width: 1800px) {
+                        font-size: 16.5rem;
+                    }
+
+                    span {
+                        display: inline-block;
+                        opacity: 0;
+                        transform: scale(0.1) translateZ(-1000px) translateY(-100px);
+                        /* o 100px según índice */
+                        /* Ocultar el texto inicialmente */
+                    }
+
+                    &.colorRojo {
+                        color: $rojo
+                    }
+
+                }
+            }
+
+
+        }
+
+        .flechaContainer {
+            border: 0px solid red;
+            transform: translateX(-100px);
+            position: relative;
+            height: 100%;
+            width: 200px;
+
+            .botellaImg {
+                width: auto;
+                height: 500px;
+                object-fit: contain;
+                position: absolute;
+                bottom: -500px;
+                left: -3rem;
+
+                @media screen and (min-width: 992px) {
+                    left: -5rem;
+                    height: 75vh;
+                    bottom: -75vh;
+                }
+
+                @media screen and (min-width: 1200px) {
+                    left: -5rem;
+                }
+
+                @media screen and (min-width: 1400px) {
+                    left: -8rem;
+                }
+            }
+
+            .flechaImg {
+                width: 100%;
+                height: 90vh;
+                object-fit: contain;
+                top: 100vh;
+                position: relative;
+
+            }
+        }
+    }
+}
+
+/* Imagen de fondo siempre centrada */
+.background {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background: url('/bpro.webp') no-repeat center center/cover;
+
+    &.bgDay {
+        background-image: url('/bDay.webp');
+    }
+}
+
+/* Contenedor que enmascara la imagen */
+.mask {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('/bgBlack.webp');
+    background-size: cover;
+    background-position: center center;
+    overflow: hidden;
+}
+
+/* Elemento con el clip-path animado */
+.clip-shape {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('../images/bpro.webp');
+    background-size: cover;
+    background-position: center center;
+    // transform: translateY(0);
+    clip-path: polygon(67.53% 36.19%, 72.1% 42.11%, 71.87% 50.26%,
+            68.95% 46.37%, 68.86% 53%, 65.81% 53.1%,
+            65.84% 46.45%, 62.7% 50.71%, 62.82% 42.34%);
+
+    opacity: 0;
+
+    &.bgDay {
+        background-image: url('../images/bDay.webp');
+    }
+
+    @media screen and (min-width: 992px) {
+        opacity: 1;
+        clip-path: polygon(61.77% 124.03%, 77.24% 143.01%, 77.42% 160.72%,
+                68.95% 150.4%, 69.28% 179.22%, 54.99% 179.1%,
+                54.75% 150.27%, 45.64% 161.81%, 45.9% 144.12%);
+    }
+
+}
+
+/* Flecha 1 (desplazada a la izquierda) */
+.clip-shape.one {
+    background-image: url('../images/bpro.webp');
+    background-size: cover;
+    background-position: 25vw center;
+    left: -25vw;
+
+    /* Mueve la segunda flecha más a la izquierda */
+    &.bgDay {
+        background-image: url('../images/bDay.webp');
+    }
+}
+
+/* Flecha 2 (desplazada a la izquierda) */
+.clip-shape.second {
+    background-image: url('../images/bpro.webp');
+    background-size: cover;
+    background-position: 44vw center;
+    left: -44vw;
+
+    /* Mueve la segunda flecha más a la izquierda */
+    &.bgDay {
+        background-image: url('../images/bDay.webp');
+    }
+}
+
+/* Flecha 3 (desplazada a la izquierda) */
+.clip-shape.third {
+    background-image: url('../images/bpro.webp');
+    background-size: cover;
+    background-position: 13vw center;
+    left: -13vw;
+
+    /* Mueve la segunda flecha más a la izquierda */
+    &.bgDay {
+        background-image: url('../images/bDay.webp');
+    }
+}
+
+
+.clip-shape.four {
+    background-image: url('../images/bpro.webp');
+    background-size: cover;
+    background-position: -10vw center;
+    left: 10vw;
+
+    /* Mueve la segunda flecha más a la izquierda */
+    &.bgDay {
+        background-image: url('../images/bDay.webp');
+    }
+}
+
+/* Flecha 5 (desplazada a la izquierda) */
+.clip-shape.five {
+    background-image: url('../images/bpro.webp');
+    background-size: cover;
+    background-position: center;
+    left: -13.5vw;
+
+    &.bgDay {
+        background-image: url('../images/bDay.webp');
+    }
+
+    @media screen and (min-width: 992px) {
+        background-position: 12vw center;
+        left: -12vw;
+
+    }
+
+    /* Mueve la segunda flecha más a la izquierda */
+}
+
+// Seccion Pro Home
+
+.sectionProContainer {
+
+    height: auto;
+
+    @media screen and (min-width: 768px) {
+        height: 680px;
+        display: flex;
+    }
+
+    @media screen and (min-width: 992px) {
+        height: 100vh;
+        display: flex;
+    }
+
+    @media screen and (min-width: 1600px) {
+        height: 900px;
+    }
+
+    >div {
+        &:first-child {
+            width: 33.33%;
+            display: none;
+
+            @media screen and (min-width: 992px) {
+                display: block;
+            }
+
+            img {
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+            }
+        }
+
+        &:last-child {
+            flex: 1;
+            position: relative;
+
+            .flechaContenedor {
+                position: absolute;
+                top: 7rem;
+                left: -4.5em;
+
+                img {
+                    width: 147px;
+                    object-fit: contain;
+                    height: auto;
+                }
+            }
+
+            .botonesCarrusel {
+                position: absolute;
+                bottom: 0;
+                right: 0rem;
+                display: flex;
+                gap: .25rem;
+
+                @media screen and (min-width: 992px) {
+                    right: 5rem;
+                }
+
+                button {
+                    width: 60px;
+                    height: 60px;
+                    background: rgba(black, .70);
+                    z-index: 40;
+                    border: 0;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+                    cursor: pointer;
+                    padding: 1rem;
+
+
+                    @media screen and (min-width: 768px) {
+                        width: 120px;
+                        height: 120px;
+                        padding: 1rem;
+                    }
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: contain;
+
+                        @media screen and (min-width: 992px) {
+                            width: 100%;
+                            height: 100%;
+                            object-fit: contain;
+                        }
+                    }
+
+
+
+                    &:last-child {
+                        transform: scaleX(-1)
+                    }
+                }
+            }
+
+            .carruselInterno {
+                background: url("../images/fondoPro.webp");
+                background-size: cover;
+                background-position: center right;
+                z-index: 20;
+                position: relative;
+                height: 550px;
+                overflow: hidden;
+                display: flex;
+                flex-wrap: nowrap;
+
+                @media screen and (min-width: 768px) {
+                    height: 100%;
+                    background: transparent;
+                }
+
+                .cardContainer {
+                    flex: 0 0 70%;
+                    /* No crecer, no reducir, ancho fijo de 300px */
+                    height: 100%;
+                    width: 70%;
+
+                    img {
+                        height: 100%;
+                        width: 100%;
+                        object-fit: cover;
+                    }
+                }
+            }
+
+            .rejasContainer {
+                position: absolute;
+                width: 87px;
+                height: 260px;
+                overflow: hidden;
+                z-index: 10;
+
+                img {
+                    width: 100%;
+                    height: auto;
+                    object-fit: contain;
+                }
+
+                &.pos1 {
+                    top: 0rem;
+                    left: 0rem;
+
+                    img {
+                        position: relative;
+                        top: -10rem;
+                    }
+                }
+
+                &.pos2 {
+                    bottom: -6rem;
+                    left: 0rem;
+
+                    img {
+                        position: relative;
+                        top: 0rem;
+                    }
+                }
+
+                &.pos3 {
+                    bottom: -0.25rem;
+                    left: 50%;
+                    transform: translateX(-50%);
+
+                    img {
+                        position: relative;
+                        top: 0rem;
+                    }
+                }
+            }
+
+            .fondoProductos {
+                position: relative;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+
+                @media screen and (min-width: 768px) {
+                    position: absolute;
+                }
+
+                .contenedorFondoProducto {
+                    width: 100%;
+                    height: 100%;
+                    position: relative;
+                    padding-bottom: 4rem;
+
+                    @media screen and (min-width: 768px) {
+                        padding-bottom: 0rem;
+                    }
+
+                    .titularContenedor {
+                        position: relative;
+                        z-index: 10;
+                        padding: 14rem 0 0 1rem;
+                        display: inline-block;
+
+                        p {
+                            font-family: "Poppins", sans-serif;
+                            font-weight: 500;
+                            font-style: italic;
+                            font-size: 1.25rem;
+                            line-height: 1em;
+                            color: white;
+                            text-align: right;
+                            margin-top: 0rem;
+
+                            @media screen and (min-width: 992px) {
+                                font-size: 1rem;
+                                margin-right: 3.5rem;
+                            }
+
+                            @media screen and (min-width: 1200px) {
+                                font-size: 1rem;
+                                margin-right: 4rem;
+                                margin-top: -.65rem;
+                            }
+
+                            @media screen and (min-width: 1400px) {
+                                font-size: 1.25rem;
+                            }
+                        }
+
+                        h2 {
+                            font-family: 'ROUND 8 FIVE';
+                            font-style: italic;
+                            font-size: 5.5rem;
+                            color: white;
+                            line-height: .85em;
+
+                            @media screen and (min-width: 992px) {
+                                font-size: 5.65rem;
+                            }
+
+                            @media screen and (min-width: 1200px) {
+                                font-size: 6.75rem;
+                            }
+
+                            @media screen and (min-width: 1400px) {
+                                font-size: 7.5rem;
+                            }
+
+                            span {
+                                color: black;
+                            }
+
+                        }
+                    }
+
+                    .bgProducto {
+                        height: 100%;
+                        width: 100%;
+                        object-fit: cover;
+                        object-position: right;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+// Seccion Day Home
+
+.sectionDayContainer {
+    height: auto;
+    overflow: hidden;
+
+    @media screen and (min-width: 768px) {
+        height: 680px;
+        display: flex;
+    }
+
+    @media screen and (min-width: 992px) {
+        height: 100vh;
+        display: flex;
+    }
+
+    @media screen and (min-width: 1600px) {
+        height: 900px;
+    }
+
+    >div {
+        &:first-child {
+            width: 33.33%;
+            display: none;
+
+            @media screen and (min-width: 992px) {
+                display: block;
+            }
+
+            img {
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+            }
+        }
+
+        &:last-child {
+            flex: 1;
+            position: relative;
+
+            .flechaContenedor {
+                position: absolute;
+                top: 7rem;
+                left: -4.5em;
+
+                img {
+                    width: 147px;
+                    object-fit: contain;
+                    height: auto;
+                }
+            }
+
+            .botonesCarrusel {
+                position: absolute;
+                bottom: 0;
+                right: 0rem;
+                display: flex;
+                gap: .25rem;
+
+                @media screen and (min-width: 992px) {
+                    right: 5rem;
+                }
+
+                button {
+                    width: 60px;
+                    height: 60px;
+                    background: rgba(black, .70);
+                    z-index: 40;
+                    border: 0;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+                    cursor: pointer;
+                    padding: 1rem;
+
+                    @media screen and (min-width: 768px) {
+                        width: 120px;
+                        height: 120px;
+                        padding: 1rem;
+                    }
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: contain;
+
+                        @media screen and (min-width: 992px) {
+                            width: 100%;
+                            height: 100%;
+                            object-fit: contain;
+                        }
+                    }
+
+
+
+                    &:last-child {
+                        transform: scaleX(-1)
+                    }
+                }
+            }
+
+            .carruselInterno {
+                background: url("../images/fondoDay.webp");
+                background-size: cover;
+                background-position: center right;
+                z-index: 20;
+                position: relative;
+                height: 550px;
+                overflow: hidden;
+                display: flex;
+                flex-wrap: nowrap;
+
+
+                @media screen and (min-width: 768px) {
+                    height: 100%;
+                    background: transparent;
+                }
+
+                @media screen and (min-width: 992px) {
+                    // height: 100%;
+                    background: transparent;
+                }
+
+                .cardContainer {
+                    flex: 0 0 70%;
+                    /* No crecer, no reducir, ancho fijo de 300px */
+                    height: 100%;
+                    width: 70%;
+
+                    img {
+                        height: 100%;
+                        width: 100%;
+                        object-fit: cover;
+                    }
+                }
+            }
+
+            .rejasContainer {
+                position: absolute;
+                width: 87px;
+                height: 260px;
+                overflow: hidden;
+                z-index: 10;
+
+                img {
+                    width: 100%;
+                    height: auto;
+                    object-fit: contain;
+                }
+
+                &.pos1 {
+                    top: 0rem;
+                    left: 0rem;
+
+                    img {
+                        position: relative;
+                        top: -10rem;
+                    }
+                }
+
+                &.pos2 {
+                    bottom: -6rem;
+                    left: 0rem;
+
+                    img {
+                        position: relative;
+                        top: 0rem;
+                    }
+                }
+
+                &.pos3 {
+                    bottom: -0.25rem;
+                    left: 50%;
+                    transform: translateX(-50%);
+
+                    img {
+                        position: relative;
+                        top: 0rem;
+                    }
+                }
+            }
+
+            .fondoProductos {
+                position: relative;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+
+                @media screen and (min-width: 768px) {
+                    position: absolute;
+                }
+
+                .contenedorFondoProducto {
+                    width: 100%;
+                    height: 100%;
+                    position: relative;
+                    padding-bottom: 4rem;
+
+                    @media screen and (min-width: 992px) {
+                        padding-bottom: 0rem;
+                    }
+
+                    .titularContenedor {
+                        position: relative;
+                        z-index: 10;
+                        padding: 14rem 0 0 1rem;
+                        display: inline-block;
+
+                        p {
+                            font-family: "Poppins", sans-serif;
+                            font-weight: 500;
+                            font-style: italic;
+                            font-size: 1.25rem;
+                            line-height: 1em;
+                            color: white;
+                            text-align: right;
+                            margin-top: 0rem;
+
+                            @media screen and (min-width: 992px) {
+                                font-size: 1rem;
+                                margin-right: 3.5rem;
+                            }
+
+                            @media screen and (min-width: 1200px) {
+                                font-size: 1rem;
+                                margin-right: 4rem;
+                                margin-top: -.65rem;
+                            }
+
+                            @media screen and (min-width: 1400px) {
+                                font-size: 1.25rem;
+                            }
+                        }
+
+                        h2 {
+                            font-family: 'ROUND 8 FIVE';
+                            font-style: italic;
+                            font-size: 5.5rem;
+                            color: white;
+                            line-height: .85em;
+
+                            @media screen and (min-width: 992px) {
+                                font-size: 5.65rem;
+                            }
+
+                            @media screen and (min-width: 1200px) {
+                                font-size: 6.75rem;
+                            }
+
+                            @media screen and (min-width: 1400px) {
+                                font-size: 7.5rem;
+                            }
+
+                            span {
+                                color: black;
+                            }
+
+                        }
+                    }
+
+                    .bgProducto {
+                        height: 100%;
+                        width: 100%;
+                        object-fit: cover;
+                        object-position: right;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+.sectionBeneficios {
+    background: url("../images/beneficiobg.webp");
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 680px;
+
+    @media screen and (min-width: 992px) {
+        height: 600px;
+    }
+
+    @media screen and (min-width: 1400px) {
+        height: 700px;
+    }
+
+    @media screen and (min-width: 1600px) {
+        height: 900px;
+    }
+
+}
+
+.internaProductoContainer {
+    background: url("../images/bgInterna.webp");
+    background-repeat: repeat;
+    background-position: center;
+    background-size: contain;
+    overflow: hidden;
+    position: relative;
+
+    .luzBox {
+        top: 60vh;
+        left: 0;
+        z-index: 10;
+        position: absolute;
+        width: 700px;
+
+        @media screen and (min-width: 1400px) {
+            left: -18vw;
+        }
+
+        img {
+            height: auto;
+            width: 100%;
+            object-fit: contain;
+        }
+    }
+
+    .seccionTabsInfo {
+        padding-top: 6rem;
+        padding-bottom: 1rem;
+        position: relative;
+        z-index: 20;
+
+        @media screen and (min-width: 992px) {
+            padding-bottom: 4rem;
+        }
+
+        .containerTabInfo {
+            .headerTabs {
+                button {
+                    border: 0px;
+                    border-bottom: 1px solid white;
+                    display: flex;
+                    justify-content: space-between;
+                    width: 100%;
+                    background: transparent;
+                    padding: .25rem 0;
+
+                    &:first-child {
+                        margin-bottom: 1rem;
+                    }
+
+                    h3 {
+                        color: white;
+                        font-family: "Poppins", sans-serif;
+                        font-weight: 400;
+                        font-size: 1.175rem;
+                        line-height: 1em;
+                        margin: 0;
+                    }
+
+                    &.active {
+                        >div {
+                            &::after {
+                                transform: rotate(0deg);
+                            }
+                        }
+                    }
+
+                    >div {
+                        width: 16px;
+                        height: 30px;
+                        position: relative;
+
+                        &::before,
+                        &::after {
+                            content: '';
+                            position: absolute;
+                            top: 12px;
+                            left: 0;
+                            width: 15px;
+                            height: 3px;
+                            background-color: white;
+                            transition: .5s ease-in transform;
+                        }
+
+                        &::after {
+                            transform: rotate(90deg);
+                        }
+                    }
+                }
+            }
+
+
+            .bodyTabs {
+                display: none;
+                opacity: 0;
+                overflow: hidden;
+                height: 0;
+                transition: .5s all ease-in;
+
+                &.active {
+                    display: block;
+                    opacity: 1;
+                    height: auto;
+
+                }
+
+                p {
+                    color: white;
+                    font-family: "Poppins", sans-serif;
+                    font-weight: 300;
+                    font-size: 0.875rem;
+                    line-height: 1.5em;
+                    margin: 0;
+                }
+
+                h2 {
+                    color: white;
+                    font-family: "Poppins", sans-serif;
+                    font-weight: 600;
+                    font-size: 1.125rem;
+                    line-height: 1em;
+                }
+
+                p {
+                    color: white;
+                    font-family: "Poppins", sans-serif;
+                    font-weight: 400;
+                    font-size: .875rem;
+                    line-height: 1.5em;
+                }
+
+                .subtitleBox {
+                    display: flex;
+                    justify-content: space-between;
+                    margin-top: 2rem;
+                }
+
+                .headerInfoTable {
+                    padding: 1rem 0;
+
+                }
+
+                >div {
+                    display: flex;
+                    justify-content: center;
+
+                    >.centerInfoBox {
+                        width: 90%;
+                        padding: 3rem 0;
+
+                        @media screen and (width: 992px) {
+                            width: 600px;
+                        }
+                    }
+                }
+
+                table tr th,
+                table tr td {
+                    background: transparent;
+                }
+
+                table tr th {
+                    color: white;
+                    font-family: "Poppins", sans-serif;
+                    font-weight: 600;
+                    font-size: 1.125rem;
+                    line-height: 1.5em;
+                }
+
+                table tr th h2,
+                table tr th h3,
+                table tr td {
+                    color: white;
+                    font-family: "Poppins", sans-serif;
+                    font-weight: 300;
+                    font-size: 0.875rem;
+                    line-height: 1.5em;
+                    margin: 0;
+                }
+
+                table tr th h3 {
+                    padding-left: 2rem;
+                }
+
+                table tr th,
+                table tr td {
+                    border: 0;
+                }
+
+                hr {
+                    width: 100%;
+                    height: 3px;
+                    background: white;
+                    opacity: 1;
+                }
+            }
+
+
+
+
+        }
+    }
+
+    .seccionProposito {
+        position: relative;
+        z-index: 12;
+        width: 100%;
+        height: 350px;
+        background: url("../images/propoBg.webp");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+
+        @media screen and (min-width: 992px) {
+            height: 750px;
+        }
+
+
+    }
+
+    .seccionInformacionBox {
+        padding: 5rem 0 5rem 0;
+        position: relative;
+        z-index: 11;
+
+        @media screen and (min-width: 992px) {
+            padding: 15rem 0 10rem 0;
+        }
+
+        .flechaTBox {
+            position: absolute;
+            bottom: -24rem;
+            left: -15rem;
+
+            img {
+                width: 650px;
+                object-fit: contain;
+                height: auto;
+            }
+        }
+
+        .gridContentInfo {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0rem;
+
+            @media screen and (min-width: 992px) {
+                grid-template-columns: repeat(12, 1fr);
+            }
+
+            >div {
+                width: 100%;
+                // min-height: 216px;
+                border-top: 1px solid $rojo;
+                border-bottom: 1px solid $rojo;
+                padding: 1.5rem 0 .5rem;
+
+
+
+                &:nth-child(1) {
+                    grid-column: 1 / span 1;
+                    border-left: 1px solid $rojo;
+                    display: flex;
+                    justify-content: center;
+                    align-items: flex-start;
+                    gap: .25rem;
+
+                    @media screen and (min-width: 992px) {
+                        grid-column: 3 / span 2;
+                    }
+
+                    >div {
+                        &:first-child {
+                            // padding: 3rem;
+                            box-sizing: border-box;
+
+                            h2 {
+                                color: white;
+                                font-family: 'ROUND 8 FIVE';
+                                font-size: 12rem;
+                                line-height: 1em;
+                            }
+                        }
+
+                        &:last-child {
+                            position: relative;
+                            padding: 1rem 0 0;
+
+                            img {
+                                width: 21px;
+                                height: auto;
+                                object-fit: contain;
+                            }
+
+                            h4 {
+                                color: white;
+                                font-family: 'Poppins';
+                                font-style: italic;
+                                font-size: 0.875rem;
+                                position: absolute;
+                                top: 7rem;
+                                left: -1.5rem;
+                                transform: rotate(-90deg);
+                            }
+                        }
+                    }
+                }
+
+                &:nth-child(2) {
+                    grid-column: 2 / span 1;
+                    border-left: 1px solid $rojo;
+                    border-right: 1px solid $rojo;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+
+                    @media screen and (min-width: 992px) {
+                        grid-column: 5 / span 2;
+                    }
+
+                    .iconBox {
+                        text-align: center;
+                    }
+
+                    p {
+                        color: white;
+                        font-family: 'Poppins';
+                        font-size: 1rem;
+                        text-align: center;
+                        margin-top: 1rem;
+                    }
+                }
+
+                &:nth-child(3) {
+                    grid-column: 1 / span 1;
+                    border-right: 1px solid $rojo;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+
+                    @media screen and (min-width: 992px) {
+                        grid-column: 7 / span 2;
+                    }
+
+                    .iconBox {
+                        text-align: center;
+                    }
+
+                    p {
+                        color: white;
+                        font-family: 'Poppins';
+                        font-size: 1rem;
+                        text-align: center;
+                        margin-top: 1rem;
+                    }
+                }
+
+                &:nth-child(4) {
+                    grid-column: 2 / -1;
+                    border-right: 1px solid $rojo;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+
+                    @media screen and (min-width: 992px) {
+                        grid-column: 9 / span 2;
+                    }
+
+                    .iconBox {
+                        text-align: center;
+                    }
+
+                    p {
+                        color: white;
+                        font-family: 'Poppins';
+                        font-size: 1rem;
+                        text-align: center;
+                        margin-top: 1rem;
+                    }
+                }
+            }
+        }
+    }
+
+    .internaHeaderContainer {
+        position: relative;
+        width: 100%;
+        height: 590px;
+        z-index: 11;
+
+        @media screen and (min-width: 992px) {
+            height: 700px;
+        }
+
+        @media screen and (min-width: 1200px) {
+            height: 850px;
+        }
+
+        @media screen and (min-width: 1400px) {
+            height: 950px;
+        }
+
+        .flechaTBox {
+            position: absolute;
+
+            &.Der {
+                top: 9rem;
+                right: 8vw;
+
+                @media screen and (min-width: 992px) {
+                    top: 6rem;
+                    right: -4vw;
+                }
+
+                @media screen and (min-width: 1200px) {
+                    top: 12rem;
+                    right: 0vw;
+                }
+
+                @media screen and (min-width: 1400px) {
+                    top: 10rem;
+                    right: 5vw;
+                }
+
+                @media screen and (min-width: 1600px) {
+                    top: 0rem;
+                    right: 8.5vw;
+                }
+
+                img {
+                    width: 880px;
+                    height: auto;
+                    object-fit: contain;
+
+                    @media screen and (min-width: 992px) {
+                        width: 900px;
+                    }
+
+                    @media screen and (min-width: 1200px) {
+                        width: 950px;
+                    }
+
+                    @media screen and (min-width: 1400px) {
+                        width: 1080px;
+                    }
+
+                    @media screen and (min-width: 1600px) {
+                        width: 1300px;
+                    }
+
+                }
+            }
+        }
+
+        .flechaBox {
+            position: absolute;
+            z-index: 10;
+
+            img {
+                width: 90px;
+                height: auto;
+                object-fit: contain;
+
+                @media screen and (min-width: 992px) {
+                    width: 291px;
+                }
+            }
+
+            &.Der {
+                top: 18rem;
+                right: 2vw;
+            }
+
+            &.Izq {
+                top: 28rem;
+                left: 2vw;
+
+                img {
+                    width: 70px;
+                    height: auto;
+                    object-fit: contain;
+
+                    @media screen and (min-width: 992px) {
+                        width: 171px;
+                    }
+                }
+            }
+        }
+
+        .infoHeaderContainer {
+            position: relative;
+            z-index: 10;
+            padding: 10rem 0 0;
+
+            @media screen and (min-width: 992px) {
+                padding: 13rem 0 0;
+            }
+
+            h2 {
+                font-family: "Poppins", sans-serif;
+                font-size: 1rem;
+                font-style: italic;
+                font-weight: 500;
+                color: white;
+                line-height: 1em;
+
+                @media screen and (min-width: 992px) {
+                    font-size: 1.375rem;
+                }
+            }
+
+            h1 {
+                font-family: "Round8Four", sans-serif;
+                font-weight: normal;
+                font-size: 6rem;
+                color: white;
+                line-height: 1em;
+
+                @media screen and (min-width: 992px) {
+                    font-size: 10rem;
+                }
+
+                span {
+                    color: $rojo;
+                }
+            }
+        }
+
+        .productoHeaderImg {
+            position: absolute;
+            bottom: -9rem;
+            left: 43%;
+            transform: translateX(-50%);
+            width: 480px;
+
+            @media screen and (min-width: 992px) {
+                bottom: -18rem;
+                left: 47%;
+                width: 700px;
+            }
+
+            @media screen and (min-width: 1200px) {
+                bottom: -19rem;
+                left: 48%;
+                width: 800px;
+            }
+
+            @media screen and (min-width: 1400px) {
+                bottom: -19rem;
+                left: 47.5%;
+                width: 870px;
+            }
+
+            img {
+                width: 100%;
+                object-fit: contain;
+            }
+        }
+
+        .bannerContainer {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            clip-path: polygon(0% 0%,
+                    /* Superior izquierdo */
+                    50% 0%,
+                    /* Superior centro */
+                    100% 0%,
+                    /* Superior derecho */
+                    100% 100%,
+                    /* Inferior derecho */
+                    50% 50%,
+                    /* Inferior centro */
+                    0% 100%
+                    /* Inferior izquierdo */
+                );
+
+            img {
+                width: 100%;
+                object-fit: cover;
+                height: 100%;
+            }
+        }
+    }
+}
+
+.seccionFamilia {
+    padding: 2rem 0 4rem;
+
+    .gridContainer {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 1rem;
+
+        >div {
+            &:nth-child(1) {
+                grid-column: 1 / -1;
+                padding-top: 8rem;
+                position: relative;
+
+                @media screen and (min-width: 992px) {
+                    grid-column: 1 / span 4;
+                }
+
+                .boxReja {
+                    position: absolute;
+                    top: 0rem;
+                    left: -2vw;
+
+                    img {
+                        height: 100px;
+                        object-fit: contain;
+                        width: auto;
+                    }
+                }
+
+                h3 {
+                    margin: 0;
+                    font-family: 'Round8Four';
+                    font-size: 5.625rem;
+                    color: white;
+                    line-height: .8em;
+
+                    span {
+                        color: $rojo;
+                    }
+                }
+            }
+
+            &:nth-child(2) {
+                grid-column: 1 / -1;
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+
+                @media screen and (min-width: 992px) {
+                    grid-column: 5 / -1;
+                    grid-template-columns: repeat(2, 1fr);
+                }
+
+                @media screen and (min-width: 1600px) {
+                    grid-template-columns: repeat(4, 1fr);
+                }
+
+                .cardFamilia {
+                    width: 100%;
+                    text-decoration: none;
+
+                    .cardBody {
+                        border: 1px solid rgba(white, .30);
+
+                        img {
+                            width: 100%;
+                            height: 300px;
+                            object-fit: contain;
+
+                            @media screen and (min-width: 992px) {
+                                height: 400px;
+                            }
+
+                            @media screen and (min-width: 1600px) {
+                                height: 520px;
+                            }
+                        }
+                    }
+
+                    .cardFooter {
+                        padding: 1rem 0 1rem;
+
+                        h3 {
+                            margin: 0;
+                            font-family: 'Round8Four';
+                            font-size: 2.5rem;
+                            color: $rojo;
+                            line-height: 1em;
+                            text-align: center;
+
+                            span {
+                                color: white;
+                            }
+                        }
+
+                        p {
+                            margin: 0;
+                            font-family: 'Poppins';
+                            font-size: 1rem;
+                            color: white;
+                            font-style: italic;
+                            line-height: 1em;
+                            text-align: center;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// FOOTER
+footer {
+    width: 100vw;
+    padding: 8rem 0 2rem;
+    background: url('../images/bgFooter.webp');
+    background-size: cover;
+    background-position: center;
+
+    .legalContainer {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 1rem;
+
+        >div {
+
+            a,
+            p {
+                font-family: "Poppins", sans-serif;
+                font-weight: 500;
+                font-size: 0.75rem;
+                line-height: 1em;
+                color: $marronClaro;
+                text-decoration: none;
+
+                @media screen and (min-width: 992px) {
+                    font-size: 0.875rem;
+                }
+            }
+
+            &:nth-child(1) {
+                grid-column: 1 / -1;
+
+                @media screen and (min-width: 992px) {
+                    grid-column: 1 / span 5;
+                }
+            }
+
+            &:nth-child(2) {
+                grid-column: 1 / span 6;
+
+                @media screen and (min-width: 992px) {
+                    grid-column: 8 / span 2;
+                }
+            }
+
+            &:nth-child(3) {
+                grid-column: 7 / -1;
+                text-align: right;
+
+                @media screen and (min-width: 992px) {
+                    grid-column: 10 / -1;
+                }
+            }
+        }
+    }
+
+    .navFooterContainer {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 1rem;
+        align-items: center;
+        padding: 4rem 0 1rem;
+
+        @media screen and (min-width: 992px) {
+            padding: 4rem 0;
+        }
+
+        >div {
+            &:nth-child(1) {
+                grid-column: 1 / span 2;
+
+                img {
+                    width: 84px;
+                    object-fit: contain;
+                }
+            }
+
+            &:nth-child(2) {
+                grid-column: 9 / -1;
+                display: flex;
+                flex-direction: column;
+                gap: .5rem;
+
+                @media screen and (min-width: 992px) {
+                    grid-column: 3 / span 3;
+                }
+
+                a {
+                    font-family: "Poppins", sans-serif;
+                    font-weight: 500;
+                    font-size: 1rem;
+                    line-height: 1em;
+                    color: white;
+                    text-decoration: none;
+                }
+            }
+
+            &:nth-child(3) {
+                grid-column: 1 / -1;
+                display: flex;
+                justify-content: flex-start;
+                align-items: flex-start;
+                justify-content: flex-end;
+                gap: 1rem;
+
+                @media screen and (min-width: 992px) {
+                    grid-column: 10 / -1;
+                    justify-content: flex-end;
+                }
+            }
+        }
+    }
+
+    .hashTagContainer {
+        h3 {
+            font-size: 5.5rem;
+            font-family: 'ROUND 8 FIVE';
+            font-style: italic;
+            color: white;
+            text-transform: uppercase;
+            text-align: center;
+
+            @media screen and (min-width: 992px) {
+                font-size: 7.5rem;
+            }
+
+            span {
+                color: $rojo;
+            }
+        }
+    }
+}
