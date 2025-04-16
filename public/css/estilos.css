@@ -12567,7 +12567,7 @@ body {
 }
 @media screen and (min-width: 1200px) {
   .sectionProContainer > div:last-child .fondoProductos .contenedorFondoProducto .titularContenedor h2 {
-    font-size: 6.75rem;
+    font-size: 5.8rem;
   }
 }
 @media screen and (min-width: 1400px) {
@@ -12825,7 +12825,7 @@ body {
 }
 @media screen and (min-width: 1200px) {
   .sectionDayContainer > div:last-child .fondoProductos .contenedorFondoProducto .titularContenedor h2 {
-    font-size: 6.75rem;
+    font-size: 5.8rem;
   }
 }
 @media screen and (min-width: 1400px) {
@@ -12886,10 +12886,28 @@ body {
 }
 @media screen and (min-width: 1400px) {
   .internaProductoContainer .luzBox {
-    left: -18vw;
+    left: 0vw;
   }
 }
 .internaProductoContainer .luzBox img {
+  height: auto;
+  width: 100%;
+  object-fit: contain;
+}
+.internaProductoContainer .luzBox2 {
+  top: 80vh;
+  right: 0;
+  z-index: 10;
+  position: absolute;
+  width: 700px;
+}
+@media screen and (min-width: 1400px) {
+  .internaProductoContainer .luzBox2 {
+    top: 70vh;
+    right: 0vw;
+  }
+}
+.internaProductoContainer .luzBox2 img {
   height: auto;
   width: 100%;
   object-fit: contain;
@@ -12903,6 +12921,14 @@ body {
 @media screen and (min-width: 992px) {
   .internaProductoContainer .seccionTabsInfo {
     padding-bottom: 4rem;
+  }
+}
+.internaProductoContainer .seccionTabsInfo .containerTabInfo {
+  padding: 0 0rem;
+}
+@media screen and (min-width: 992px) {
+  .internaProductoContainer .seccionTabsInfo .containerTabInfo {
+    padding: 0 8rem;
   }
 }
 .internaProductoContainer .seccionTabsInfo .containerTabInfo .headerTabs button {
@@ -13036,19 +13062,93 @@ body {
   opacity: 1;
 }
 .internaProductoContainer .seccionProposito {
+  display: flex;
+  justify-content: flex-start;
+  height: 500px;
   position: relative;
-  z-index: 12;
-  width: 100%;
-  height: 350px;
-  background: url("../images/propoBg.webp");
-  background-repeat: no-repeat;
+  z-index: 30;
+}
+.internaProductoContainer .seccionProposito.bgDayInterna > div:nth-child(2) {
+  background: url("../images/bgpropositio2Day.webp");
+  background-repeat: repeat;
   background-position: center;
   background-size: cover;
 }
-@media screen and (min-width: 992px) {
-  .internaProductoContainer .seccionProposito {
-    height: 550px;
+.internaProductoContainer .seccionProposito > div:nth-child(1) {
+  display: none;
+  width: 30%;
+  height: 100%;
+}
+@media screen and (min-width: 768px) {
+  .internaProductoContainer .seccionProposito > div:nth-child(1) {
+    display: block;
   }
+}
+.internaProductoContainer .seccionProposito > div:nth-child(1) .imgContainer {
+  width: 100%;
+  height: 100%;
+}
+.internaProductoContainer .seccionProposito > div:nth-child(1) .imgContainer img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.internaProductoContainer .seccionProposito > div:nth-child(2) {
+  flex: 1;
+  position: relative;
+  background: url("../images/bgpropositio2.webp");
+  background-repeat: repeat;
+  background-position: center;
+  background-size: cover;
+}
+.internaProductoContainer .seccionProposito > div:nth-child(2) .rejaContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.internaProductoContainer .seccionProposito > div:nth-child(2) .rejaContainer img {
+  width: 87px;
+  height: auto;
+  object-fit: contain;
+}
+.internaProductoContainer .seccionProposito > div:nth-child(2) .gridProposito {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  padding: 4rem 0 0;
+}
+@media screen and (min-width: 768px) {
+  .internaProductoContainer .seccionProposito > div:nth-child(2) .gridProposito {
+    grid-template-columns: repeat(8, 1fr);
+  }
+}
+.internaProductoContainer .seccionProposito > div:nth-child(2) .gridProposito > div {
+  grid-column: 2/-1;
+  display: flex;
+  justify-content: center;
+}
+@media screen and (min-width: 768px) {
+  .internaProductoContainer .seccionProposito > div:nth-child(2) .gridProposito > div {
+    grid-column: 5/span 2;
+  }
+}
+.internaProductoContainer .seccionProposito > div:nth-child(2) .gridProposito > div .infoProp img {
+  width: 180px;
+  height: auto;
+  object-fit: contain;
+}
+.internaProductoContainer .seccionProposito > div:nth-child(2) .gridProposito > div .infoProp h3 {
+  font-family: "Round8Four";
+  font-size: 5.625rem;
+  color: white;
+  line-height: 0.85em;
+  margin-top: 2rem;
+}
+.internaProductoContainer .seccionProposito > div:nth-child(2) .gridProposito > div .infoProp h3 span {
+  color: #ED1C24;
+}
+.internaProductoContainer .seccionProposito > div:nth-child(2) .gridProposito > div .infoProp.bgDayInterna h3 span {
+  color: #83FBE2;
 }
 .internaProductoContainer .seccionInformacionBox {
   padding: 5rem 0 5rem 0;
@@ -13069,6 +13169,28 @@ body {
   width: 650px;
   object-fit: contain;
   height: auto;
+}
+.internaProductoContainer .seccionInformacionBox .titularPrincipalBox {
+  margin-top: -2rem;
+  margin-bottom: 2rem;
+}
+@media screen and (min-width: 992px) {
+  .internaProductoContainer .seccionInformacionBox .titularPrincipalBox {
+    margin-top: -5rem;
+    margin-bottom: 4rem;
+  }
+}
+.internaProductoContainer .seccionInformacionBox .titularPrincipalBox h3 {
+  color: white;
+  font-family: "Poppins";
+  font-weight: 500;
+  font-size: 1rem;
+  text-align: center;
+}
+@media screen and (min-width: 992px) {
+  .internaProductoContainer .seccionInformacionBox .titularPrincipalBox h3 {
+    font-size: 1.375rem;
+  }
 }
 .internaProductoContainer .seccionInformacionBox .gridContentInfo {
   display: grid;
@@ -13158,10 +13280,12 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  border-left: 1px solid #ED1C24;
 }
 @media screen and (min-width: 992px) {
   .internaProductoContainer .seccionInformacionBox .gridContentInfo > div:nth-child(3) {
     grid-column: 7/span 2;
+    border-left: 0px solid #ED1C24;
   }
 }
 .internaProductoContainer .seccionInformacionBox .gridContentInfo > div:nth-child(3) .iconBox {
@@ -13196,6 +13320,29 @@ body {
   font-size: 1rem;
   text-align: center;
   margin-top: 1rem;
+}
+.internaProductoContainer .seccionInformacionBox .gridContentInfo.bgDayInterna > div {
+  border-top: 1px solid #AC00FF;
+  border-bottom: 1px solid #AC00FF;
+}
+.internaProductoContainer .seccionInformacionBox .gridContentInfo.bgDayInterna > div:nth-child(1) {
+  border-left: 1px solid #AC00FF;
+}
+.internaProductoContainer .seccionInformacionBox .gridContentInfo.bgDayInterna > div:nth-child(2) {
+  border-left: 1px solid #AC00FF;
+  border-right: 1px solid #AC00FF;
+}
+.internaProductoContainer .seccionInformacionBox .gridContentInfo.bgDayInterna > div:nth-child(3) {
+  border-right: 1px solid #AC00FF;
+  border-left: 1px solid #AC00FF;
+}
+@media screen and (min-width: 992px) {
+  .internaProductoContainer .seccionInformacionBox .gridContentInfo.bgDayInterna > div:nth-child(3) {
+    border-left: 0px solid #AC00FF;
+  }
+}
+.internaProductoContainer .seccionInformacionBox .gridContentInfo.bgDayInterna > div:nth-child(4) {
+  border-right: 1px solid #AC00FF;
 }
 .internaProductoContainer .internaHeaderContainer {
   position: relative;
@@ -13313,36 +13460,41 @@ body {
 }
 @media screen and (min-width: 992px) {
   .internaProductoContainer .internaHeaderContainer .infoHeaderContainer {
-    padding: 13rem 0 0;
+    padding: 11.5rem 0 0;
   }
 }
-.internaProductoContainer .internaHeaderContainer .infoHeaderContainer h2 {
+.internaProductoContainer .internaHeaderContainer .infoHeaderContainer h1 {
   font-family: "Poppins", sans-serif;
   font-size: 1rem;
   font-style: italic;
   font-weight: 500;
   color: white;
-  line-height: 1em;
+  line-height: 1.85em;
+  margin: 0;
 }
 @media screen and (min-width: 992px) {
-  .internaProductoContainer .internaHeaderContainer .infoHeaderContainer h2 {
+  .internaProductoContainer .internaHeaderContainer .infoHeaderContainer h1 {
     font-size: 1.375rem;
   }
 }
-.internaProductoContainer .internaHeaderContainer .infoHeaderContainer h1 {
+.internaProductoContainer .internaHeaderContainer .infoHeaderContainer h2 {
   font-family: "Round8Four", sans-serif;
   font-weight: normal;
   font-size: 6rem;
   color: white;
-  line-height: 1em;
+  line-height: 0.85em;
+  margin: 0;
 }
 @media screen and (min-width: 992px) {
-  .internaProductoContainer .internaHeaderContainer .infoHeaderContainer h1 {
+  .internaProductoContainer .internaHeaderContainer .infoHeaderContainer h2 {
     font-size: 10rem;
   }
 }
-.internaProductoContainer .internaHeaderContainer .infoHeaderContainer h1 span {
+.internaProductoContainer .internaHeaderContainer .infoHeaderContainer h2 span {
   color: #ED1C24;
+}
+.internaProductoContainer .internaHeaderContainer .infoHeaderContainer h2.bgDayInterna span {
+  color: #AC00FF;
 }
 .internaProductoContainer .internaHeaderContainer .productoHeaderImg {
   position: absolute;
@@ -13491,18 +13643,134 @@ body {
   line-height: 1em;
   text-align: center;
 }
+.seccionFamilia.bgDayInterna .gridContainer > div:nth-child(1) h3 span {
+  color: #AC00FF;
+}
+.seccionFamilia.bgDayInterna .gridContainer > div:nth-child(2) .cardFamilia .cardFooter h3 {
+  color: #AC00FF;
+}
+
+.seccionBannerFooter {
+  display: flex;
+  justify-content: flex-start;
+  height: 400px;
+}
+@media screen and (min-width: 1600px) {
+  .seccionBannerFooter {
+    height: 580px;
+  }
+}
+.seccionBannerFooter > div:first-child {
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .seccionBannerFooter > div:first-child {
+    display: block;
+    width: 30%;
+  }
+}
+.seccionBannerFooter > div:first-child .footerbg1 {
+  height: 100%;
+  width: 100%;
+}
+.seccionBannerFooter > div:first-child .footerbg1 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.seccionBannerFooter > div:last-child {
+  display: flex;
+  flex: 1;
+}
+.seccionBannerFooter > div:last-child a {
+  position: relative;
+  width: 100%;
+  text-decoration: none;
+  overflow: hidden;
+}
+.seccionBannerFooter > div:last-child a .fondoContainer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.5s ease;
+  z-index: 1;
+}
+.seccionBannerFooter > div:last-child a:hover .fondoContainer {
+  transform: scale(1.1);
+}
+.seccionBannerFooter > div:last-child a .imgflechaContainer {
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+  top: auto;
+  width: 60px;
+  height: auto;
+  object-fit: contain;
+  z-index: 3;
+}
+@media screen and (min-width: 768px) {
+  .seccionBannerFooter > div:last-child a .imgflechaContainer {
+    top: 50%;
+    bottom: auto;
+    transform: translateY(-50%);
+    width: 116px;
+  }
+}
+.seccionBannerFooter > div:last-child a .imgRejaContainer {
+  position: absolute;
+  top: 0px;
+  left: 0rem;
+  width: 98px;
+  height: auto;
+  object-fit: contain;
+  z-index: 3;
+}
+.seccionBannerFooter > div:last-child a .infoBox {
+  padding-left: 7.5rem;
+  position: relative;
+  z-index: 3;
+}
+.seccionBannerFooter > div:last-child a .infoBox h3 {
+  font-family: "Round8Four";
+  font-size: 5.625rem;
+  color: white;
+  line-height: 0.85em;
+  margin-top: 2rem;
+}
+.seccionBannerFooter > div:last-child a .infoBox h3 span {
+  color: #A000ED;
+}
+.seccionBannerFooter > div:last-child a .infoBox p {
+  font-family: "Poppins";
+  font-style: italic;
+  font-size: 1.125rem;
+  color: white;
+  line-height: 1em;
+}
+.seccionBannerFooter > div:last-child a .infoBox.bannerProInterna h3 span {
+  color: #ED1C24;
+}
 
 footer {
   width: 100vw;
-  padding: 8rem 0 2rem;
-  background: url("../images/bgFooter.webp");
+  padding: 3rem 0 1rem;
+  background: url("../images/bgInterna.webp");
   background-size: cover;
   background-position: center;
 }
 footer .legalContainer {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  gap: 1rem;
+  gap: 0.25rem;
+  margin-top: 1rem;
+}
+@media screen and (min-width: 768px) {
+  footer .legalContainer {
+    gap: 1rem;
+    margin-top: 0rem;
+  }
 }
 footer .legalContainer > div a,
 footer .legalContainer > div p {
@@ -13512,11 +13780,20 @@ footer .legalContainer > div p {
   line-height: 1em;
   color: #CA999A;
   text-decoration: none;
+  margin: 0;
 }
 @media screen and (min-width: 992px) {
   footer .legalContainer > div a,
   footer .legalContainer > div p {
     font-size: 0.875rem;
+  }
+}
+footer .legalContainer > div p {
+  text-align: center;
+}
+@media screen and (min-width: 768px) {
+  footer .legalContainer > div p {
+    text-align: left;
   }
 }
 footer .legalContainer > div:nth-child(1) {
@@ -13548,41 +13825,92 @@ footer .navFooterContainer {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   gap: 1rem;
-  align-items: center;
-  padding: 4rem 0 1rem;
+  align-items: flex-start;
+  padding: 1rem 0 1rem;
+}
+@media screen and (min-width: 768px) {
+  footer .navFooterContainer {
+    padding: 4rem 0 1rem;
+  }
 }
 @media screen and (min-width: 992px) {
   footer .navFooterContainer {
     padding: 4rem 0;
+    align-items: flex-start;
   }
 }
+footer .navFooterContainer .listProductos {
+  padding-left: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+footer .navFooterContainer .listProductos a {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 0.75rem;
+  line-height: 1.5em;
+  color: white;
+  text-decoration: none;
+  transition: 0.5s all ease-in;
+}
+footer .navFooterContainer .listProductos a:hover, footer .navFooterContainer .listProductos a.active {
+  color: #ED1C24;
+}
 footer .navFooterContainer > div:nth-child(1) {
-  grid-column: 1/span 2;
+  grid-column: 1/-1;
+  margin: 0 auto 1rem;
+}
+@media screen and (min-width: 768px) {
+  footer .navFooterContainer > div:nth-child(1) {
+    grid-column: 1/span 2;
+    margin: 0;
+  }
 }
 footer .navFooterContainer > div:nth-child(1) img {
   width: 84px;
   object-fit: contain;
 }
 footer .navFooterContainer > div:nth-child(2) {
-  grid-column: 9/-1;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
+  grid-column: 1/-1;
+}
+@media screen and (min-width: 768px) {
+  footer .navFooterContainer > div:nth-child(2) {
+    grid-column: 3/span 4;
+  }
 }
 @media screen and (min-width: 992px) {
   footer .navFooterContainer > div:nth-child(2) {
     grid-column: 3/span 3;
   }
 }
-footer .navFooterContainer > div:nth-child(2) a {
+footer .navFooterContainer > div:nth-child(2) h3 {
   font-family: "Poppins", sans-serif;
   font-weight: 500;
   font-size: 1rem;
   line-height: 1em;
   color: white;
-  text-decoration: none;
 }
 footer .navFooterContainer > div:nth-child(3) {
+  grid-column: 1/-1;
+}
+@media screen and (min-width: 768px) {
+  footer .navFooterContainer > div:nth-child(3) {
+    grid-column: 8/span 4;
+  }
+}
+@media screen and (min-width: 992px) {
+  footer .navFooterContainer > div:nth-child(3) {
+    grid-column: 6/span 3;
+  }
+}
+footer .navFooterContainer > div:nth-child(3) h3 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1em;
+  color: white;
+}
+footer .navFooterContainer > div:nth-child(4) {
   grid-column: 1/-1;
   display: flex;
   justify-content: flex-start;
@@ -13591,10 +13919,26 @@ footer .navFooterContainer > div:nth-child(3) {
   gap: 1rem;
 }
 @media screen and (min-width: 992px) {
-  footer .navFooterContainer > div:nth-child(3) {
+  footer .navFooterContainer > div:nth-child(4) {
     grid-column: 10/-1;
     justify-content: flex-end;
+    padding-top: 3rem;
   }
+}
+footer .navFooterContainer > div:nth-child(4) a {
+  width: 30px;
+  height: 30px;
+}
+@media screen and (min-width: 768px) {
+  footer .navFooterContainer > div:nth-child(4) a {
+    width: 48px;
+    height: 48px;
+  }
+}
+footer .navFooterContainer > div:nth-child(4) a img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 footer .hashTagContainer h3 {
   font-size: 5.5rem;

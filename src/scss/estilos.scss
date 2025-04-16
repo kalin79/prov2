@@ -8,7 +8,9 @@ $rojo: #ED1C24;
 $gris: #DDDDDD;
 $grisOscuro: #A6A8AB;
 $morado: #AC00FF;
+$moradoOscuro: #A000ED;
 $marronClaro: #CA999A;
+$turqueza: #83FBE2;
 // fuentes
 
 
@@ -809,7 +811,7 @@ body {
                             }
 
                             @media screen and (min-width: 1200px) {
-                                font-size: 6.75rem;
+                                font-size: 5.80rem;
                             }
 
                             @media screen and (min-width: 1400px) {
@@ -1087,7 +1089,7 @@ body {
                             }
 
                             @media screen and (min-width: 1200px) {
-                                font-size: 6.75rem;
+                                font-size: 5.8rem;
                             }
 
                             @media screen and (min-width: 1400px) {
@@ -1154,7 +1156,26 @@ body {
         width: 700px;
 
         @media screen and (min-width: 1400px) {
-            left: -18vw;
+            left: 0vw;
+        }
+
+        img {
+            height: auto;
+            width: 100%;
+            object-fit: contain;
+        }
+    }
+
+    .luzBox2 {
+        top: 80vh;
+        right: 0;
+        z-index: 10;
+        position: absolute;
+        width: 700px;
+
+        @media screen and (min-width: 1400px) {
+            top: 70vh;
+            right: 0vw;
         }
 
         img {
@@ -1175,6 +1196,12 @@ body {
         }
 
         .containerTabInfo {
+            padding: 0 0rem;
+
+            @media screen and (min-width: 992px) {
+                padding: 0 8rem;
+            }
+
             .headerTabs {
                 button {
                     border: 0px;
@@ -1343,20 +1370,116 @@ body {
     }
 
     .seccionProposito {
+        display: flex;
+        justify-content: flex-start;
+        height: 500px;
         position: relative;
-        z-index: 12;
-        width: 100%;
-        height: 350px;
-        background: url("../images/propoBg.webp");
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover;
+        z-index: 30;
 
-        @media screen and (min-width: 992px) {
-            height: 550px;
+        &.bgDayInterna {
+            >div {
+                &:nth-child(2) {
+                    background: url("../images/bgpropositio2Day.webp");
+                    background-repeat: repeat;
+                    background-position: center;
+                    background-size: cover;
+                }
+            }
         }
 
+        >div {
+            &:nth-child(1) {
+                display: none;
+                width: 30%;
+                height: 100%;
 
+                @media screen and (min-width: 768px) {
+                    display: block;
+                }
+
+                .imgContainer {
+                    width: 100%;
+                    height: 100%;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
+            }
+
+            &:nth-child(2) {
+                flex: 1;
+                position: relative;
+                background: url("../images/bgpropositio2.webp");
+                background-repeat: repeat;
+                background-position: center;
+                background-size: cover;
+
+                .rejaContainer {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+
+                    img {
+                        width: 87px;
+                        height: auto;
+                        object-fit: contain;
+                    }
+                }
+
+                .gridProposito {
+                    display: grid;
+                    grid-template-columns: repeat(4, 1fr);
+                    gap: 1rem;
+                    padding: 4rem 0 0;
+
+                    @media screen and (min-width: 768px) {
+                        grid-template-columns: repeat(8, 1fr);
+                    }
+
+                    >div {
+                        grid-column: 2 / -1;
+                        display: flex;
+                        justify-content: center;
+
+                        @media screen and (min-width: 768px) {
+                            grid-column: 5 / span 2;
+                        }
+
+                        .infoProp {
+                            img {
+                                width: 180px;
+                                height: auto;
+                                object-fit: contain;
+                            }
+
+                            h3 {
+                                font-family: 'Round8Four';
+                                font-size: 5.625rem;
+                                color: white;
+                                line-height: .85em;
+                                margin-top: 2rem;
+
+                                span {
+                                    color: $rojo;
+                                }
+                            }
+
+                            &.bgDayInterna {
+                                h3 {
+                                    span {
+                                        color: $turqueza;
+                                    }
+                                }
+                            }
+                        }
+
+                    }
+                }
+            }
+        }
     }
 
     .seccionInformacionBox {
@@ -1380,6 +1503,28 @@ body {
             }
         }
 
+        .titularPrincipalBox {
+            margin-top: -2rem;
+            margin-bottom: 2rem;
+
+            @media screen and (min-width: 992px) {
+                margin-top: -5rem;
+                margin-bottom: 4rem;
+            }
+
+            h3 {
+                color: white;
+                font-family: 'Poppins';
+                font-weight: 500;
+                font-size: 1rem;
+                text-align: center;
+
+                @media screen and (min-width: 992px) {
+                    font-size: 1.375rem;
+                }
+            }
+        }
+
         .gridContentInfo {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -1395,8 +1540,6 @@ body {
                 border-top: 1px solid $rojo;
                 border-bottom: 1px solid $rojo;
                 padding: 1.5rem 0 .5rem;
-
-
 
                 &:nth-child(1) {
                     grid-column: 1 / span 1;
@@ -1480,9 +1623,11 @@ body {
                     flex-direction: column;
                     justify-content: center;
                     align-items: center;
+                    border-left: 1px solid $rojo;
 
                     @media screen and (min-width: 992px) {
                         grid-column: 7 / span 2;
+                        border-left: 0px solid $rojo;
                     }
 
                     .iconBox {
@@ -1520,6 +1665,35 @@ body {
                         font-size: 1rem;
                         text-align: center;
                         margin-top: 1rem;
+                    }
+                }
+            }
+
+            &.bgDayInterna {
+                >div {
+                    border-top: 1px solid $morado;
+                    border-bottom: 1px solid $morado;
+
+                    &:nth-child(1) {
+                        border-left: 1px solid $morado;
+                    }
+
+                    &:nth-child(2) {
+                        border-left: 1px solid $morado;
+                        border-right: 1px solid $morado;
+                    }
+
+                    &:nth-child(3) {
+                        border-right: 1px solid $morado;
+                        border-left: 1px solid $morado;
+
+                        @media screen and (min-width: 992px) {
+                            border-left: 0px solid $morado;
+                        }
+                    }
+
+                    &:nth-child(4) {
+                        border-right: 1px solid $morado;
                     }
                 }
             }
@@ -1637,28 +1811,32 @@ body {
             padding: 10rem 0 0;
 
             @media screen and (min-width: 992px) {
-                padding: 13rem 0 0;
+                padding: 11.5rem 0 0;
             }
 
-            h2 {
+            h1 {
                 font-family: "Poppins", sans-serif;
                 font-size: 1rem;
                 font-style: italic;
                 font-weight: 500;
                 color: white;
-                line-height: 1em;
+                line-height: 1.85em;
+                margin: 0;
 
                 @media screen and (min-width: 992px) {
                     font-size: 1.375rem;
                 }
+
+
             }
 
-            h1 {
+            h2 {
                 font-family: "Round8Four", sans-serif;
                 font-weight: normal;
                 font-size: 6rem;
                 color: white;
-                line-height: 1em;
+                line-height: .85em;
+                margin: 0;
 
                 @media screen and (min-width: 992px) {
                     font-size: 10rem;
@@ -1666,6 +1844,12 @@ body {
 
                 span {
                     color: $rojo;
+                }
+
+                &.bgDayInterna {
+                    span {
+                        color: $morado;
+                    }
                 }
             }
         }
@@ -1841,20 +2025,174 @@ body {
             }
         }
     }
+
+    &.bgDayInterna {
+        .gridContainer {
+            >div {
+                &:nth-child(1) {
+                    h3 {
+                        span {
+                            color: $morado;
+                        }
+                    }
+                }
+
+                &:nth-child(2) {
+                    .cardFamilia {
+                        .cardFooter {
+                            h3 {
+                                color: $morado;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.seccionBannerFooter {
+    display: flex;
+    justify-content: flex-start;
+    height: 400px;
+
+    @media screen and (min-width: 1600px) {
+        height: 580px;
+    }
+
+    >div {
+        &:first-child {
+            display: none;
+
+            @media screen and (min-width: 768px) {
+                display: block;
+                width: 30%;
+            }
+
+            .footerbg1 {
+                height: 100%;
+                width: 100%;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+
+        }
+
+        &:last-child {
+            display: flex;
+            flex: 1;
+
+            a {
+                position: relative;
+                width: 100%;
+                text-decoration: none;
+
+                overflow: hidden;
+
+                .fondoContainer {
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    object-position: center;
+                    transition: transform 0.5s ease;
+                    z-index: 1;
+                }
+
+                &:hover {
+                    .fondoContainer {
+                        transform: scale(1.1);
+                    }
+                }
+
+                .imgflechaContainer {
+                    position: absolute;
+                    bottom: 2rem;
+                    right: 2rem;
+                    top: auto;
+                    width: 60px;
+                    height: auto;
+                    object-fit: contain;
+                    z-index: 3;
+
+                    @media screen and (min-width: 768px) {
+                        top: 50%;
+                        bottom: auto;
+                        transform: translateY(-50%);
+                        width: 116px;
+                    }
+                }
+
+                .imgRejaContainer {
+                    position: absolute;
+                    top: 0px;
+                    left: 0rem;
+                    width: 98px;
+                    height: auto;
+                    object-fit: contain;
+                    z-index: 3;
+                }
+
+                .infoBox {
+                    padding-left: 7.5rem;
+                    position: relative;
+                    z-index: 3;
+
+                    h3 {
+                        font-family: 'Round8Four';
+                        font-size: 5.625rem;
+                        color: white;
+                        line-height: .85em;
+                        margin-top: 2rem;
+
+                        span {
+                            color: $moradoOscuro;
+                        }
+                    }
+
+                    p {
+                        font-family: 'Poppins';
+                        font-style: italic;
+                        font-size: 1.125rem;
+                        color: white;
+                        line-height: 1em;
+                    }
+
+                    &.bannerProInterna {
+                        h3 {
+                            span {
+                                color: $rojo;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 // FOOTER
 footer {
     width: 100vw;
-    padding: 8rem 0 2rem;
-    background: url('../images/bgFooter.webp');
+    padding: 3rem 0 1rem;
+    background: url('../images/bgInterna.webp');
     background-size: cover;
     background-position: center;
 
     .legalContainer {
         display: grid;
         grid-template-columns: repeat(12, 1fr);
-        gap: 1rem;
+        gap: .25rem;
+        margin-top: 1rem;
+
+        @media screen and (min-width: 768px) {
+            gap: 1rem;
+            margin-top: 0rem;
+        }
 
         >div {
 
@@ -1866,9 +2204,18 @@ footer {
                 line-height: 1em;
                 color: $marronClaro;
                 text-decoration: none;
+                margin: 0;
 
                 @media screen and (min-width: 992px) {
                     font-size: 0.875rem;
+                }
+            }
+
+            p {
+                text-align: center;
+
+                @media screen and (min-width: 768px) {
+                    text-align: left;
                 }
             }
 
@@ -1903,16 +2250,49 @@ footer {
         display: grid;
         grid-template-columns: repeat(12, 1fr);
         gap: 1rem;
-        align-items: center;
-        padding: 4rem 0 1rem;
+        align-items: flex-start;
+        padding: 1rem 0 1rem;
+
+        @media screen and (min-width: 768px) {
+            padding: 4rem 0 1rem;
+        }
 
         @media screen and (min-width: 992px) {
             padding: 4rem 0;
+            align-items: flex-start;
+        }
+
+        .listProductos {
+            padding-left: 1rem;
+            display: flex;
+            flex-direction: column;
+
+            a {
+                font-family: "Poppins", sans-serif;
+                font-weight: 500;
+                font-size: .75rem;
+                line-height: 1.5em;
+                color: white;
+                text-decoration: none;
+                // display: block;
+                transition: .5s all ease-in;
+
+                &:hover,
+                &.active {
+                    color: $rojo;
+                }
+            }
         }
 
         >div {
             &:nth-child(1) {
-                grid-column: 1 / span 2;
+                grid-column: 1 / -1;
+                margin: 0 auto 1rem;
+
+                @media screen and (min-width: 768px) {
+                    grid-column: 1 / span 2;
+                    margin: 0;
+                }
 
                 img {
                     width: 84px;
@@ -1920,27 +2300,67 @@ footer {
                 }
             }
 
+            // &:nth-child(2) {
+            //     grid-column: 9 / -1;
+            //     display: flex;
+            //     flex-direction: column;
+            //     gap: .5rem;
+
+            //     @media screen and (min-width: 992px) {
+            //         grid-column: 3 / span 2;
+            //     }
+
+            //     a {
+            //         font-family: "Poppins", sans-serif;
+            //         font-weight: 500;
+            //         font-size: 1rem;
+            //         line-height: 1em;
+            //         color: white;
+            //         text-decoration: none;
+            //     }
+            // }
+
             &:nth-child(2) {
-                grid-column: 9 / -1;
-                display: flex;
-                flex-direction: column;
-                gap: .5rem;
+                grid-column: 1 / -1;
+
+                @media screen and (min-width: 768px) {
+                    grid-column: 3 / span 4;
+                }
 
                 @media screen and (min-width: 992px) {
                     grid-column: 3 / span 3;
                 }
 
-                a {
+                h3 {
                     font-family: "Poppins", sans-serif;
                     font-weight: 500;
                     font-size: 1rem;
                     line-height: 1em;
                     color: white;
-                    text-decoration: none;
                 }
             }
 
             &:nth-child(3) {
+                grid-column: 1 / -1;
+
+                @media screen and (min-width: 768px) {
+                    grid-column: 8 / span 4;
+                }
+
+                @media screen and (min-width: 992px) {
+                    grid-column: 6 / span 3;
+                }
+
+                h3 {
+                    font-family: "Poppins", sans-serif;
+                    font-weight: 500;
+                    font-size: 1rem;
+                    line-height: 1em;
+                    color: white;
+                }
+            }
+
+            &:nth-child(4) {
                 grid-column: 1 / -1;
                 display: flex;
                 justify-content: flex-start;
@@ -1951,6 +2371,23 @@ footer {
                 @media screen and (min-width: 992px) {
                     grid-column: 10 / -1;
                     justify-content: flex-end;
+                    padding-top: 3rem;
+                }
+
+                a {
+                    width: 30px;
+                    height: 30px;
+
+                    @media screen and (min-width: 768px) {
+                        width: 48px;
+                        height: 48px;
+                    }
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: contain;
+                    }
                 }
             }
         }
