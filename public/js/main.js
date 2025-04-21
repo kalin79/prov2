@@ -1,5 +1,15 @@
 document.addEventListener("DOMContentLoaded", function () {
 
+
+    // Detectar el rango de pantalla actual
+
+    function getDeviceType() {
+        const width = window.innerWidth;
+        if (width <= 768) return "mobile";
+        if (width > 768 && width <= 992) return "tablet";
+        return "desktop";
+    }
+
     gsap.set(".navContainer .logoMenu", { y: -200 })
 
     gsap.fromTo(".navContainer", {
@@ -124,6 +134,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     function AnimarCarruselDay() {
+        console.log('entro');
         items2.forEach((item, i) => {
             gsap.to(item, {
                 xPercent: "+=70", // mover cada item 100px a la derecha
@@ -133,7 +144,22 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    AnimarCarruselDay()
+    function setupAnimation2() {
+
+        const device = getDeviceType();
+
+        console.log(device)
+
+        switch (device) {
+
+            case "desktop":
+                AnimarCarruselDay()
+                break;
+        }
+    }
+
+    // Ejecutar al cargar
+    setupAnimation2();
 
     // fin del carrusel de day
 
@@ -249,7 +275,24 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    AnimarCarruselPro()
+
+
+    function setupAnimation3() {
+
+        const device = getDeviceType();
+
+        console.log(device)
+
+        switch (device) {
+
+            case "desktop":
+                AnimarCarruselPro()
+                break;
+        }
+    }
+
+    // Ejecutar al cargar
+    setupAnimation3();
 
     // fin del carrusel de pro
 
@@ -599,7 +642,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 duration: 1.25,
                 ease: "power3.out",
                 onComplete: () => {
-                    moverAleatoriamente(selectorBanner)
+                    // moverAleatoriamente(selectorBanner)
                 }
             },
             9.50,
@@ -750,7 +793,7 @@ document.addEventListener("DOMContentLoaded", function () {
             opacity: 1,
             onUpdate: function () {
                 let progress = this.progress(); // Progreso de la animación (0 a 1)
-                let size = 100 - progress * 60; // Va de 120% a 40%
+                let size = 100 - progress * 75; // Va de 120% a 40%
                 document.querySelector(`.${selectorBanner} ` + '.clip-shape.five').style.clipPath = `
                 polygon(
                         67.53% ${size}%, 
@@ -854,16 +897,40 @@ document.addEventListener("DOMContentLoaded", function () {
 
         //FIN
 
+        tlAnimacionBanner.to(`.${selectorBanner} ` + ".contenidoBannerMain .panelIzq", {
+            duration: 3,
+            ease: "power3.out",
+            x: 0,
+        }, 7)
+
+        tlAnimacionBanner.add(() => {
+            palabras.forEach((palabra, index) => {
+                gsap.fromTo(palabra,
+                    {
+                        x: index % 2 === 0 ? "-110%" : "100%", // Alterna dirección (izquierda/derecha)
+                        opacity: opacidadInicial - decremento * index
+                    },
+                    {
+                        x: 0,
+                        opacity: opacidadInicial - decremento * index,
+                        duration: 1.5,
+                        delay: index * .5, // Pequeño delay en cada una para un efecto en cascada
+                        ease: "power2.out"
+                    }
+                );
+            });
+        }, 8)
+
 
         // animacion de la FLECHA, BOTELLA Y TEXTO 
 
         // Animacion de la Flecha
         tlAnimacionBanner.fromTo(`.${selectorBanner} ` + ".flechaContainer .flechaImg",
             {
-                y: "100vh",
+                y: "850px",
             },
             {
-                y: "-90vh",
+                y: "-300px",
                 // delay: 8.5,
                 duration: 1.5,
                 ease: "power3.out",
@@ -873,11 +940,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
         tlAnimacionBanner.to(`.${selectorBanner} ` + ".flechaContainer .botellaImg",
             {
-                y: "-75vh",
+                y: "-480px",
                 duration: 1.25,
                 ease: "power3.out",
                 onComplete: () => {
-                    moverAleatoriamenteMobil(selectorBanner)
+                    // moverAleatoriamenteMobil(selectorBanner)
                 }
             },
             8.50,
@@ -942,9 +1009,9 @@ document.addEventListener("DOMContentLoaded", function () {
         const tl = gsap.timeline({ repeat: -1, yoyo: true, ease: "sine.inOut" });
         const element = `.${selectorBanner} ` + ".flechaContainer .botellaImg";
         // Añade animaciones a la línea de tiempo
-        tl.to(element, { y: "-75vh", duration: 2 }) // Mueve hacia arriba 10px
+        tl.to(element, { y: "-520px", duration: 2 }) // Mueve hacia arriba 10px
             .to(element, { x: 3, duration: 2 })  // Mueve hacia la derecha 10px
-            .to(element, { y: "-73vh", duration: 2 })  // Mueve hacia abajo 10px
+            .to(element, { y: "-500", duration: 2 })  // Mueve hacia abajo 10px
             .to(element, { x: -3, duration: 2 }); // Mueve hacia la izquierda 10px
 
     }
@@ -973,14 +1040,7 @@ document.addEventListener("DOMContentLoaded", function () {
         return animamarBannerHome(activarBanner)
     }
 
-    // Detectar el rango de pantalla actual
 
-    function getDeviceType() {
-        const width = window.innerWidth;
-        if (width <= 768) return "mobile";
-        if (width > 768 && width <= 992) return "tablet";
-        return "desktop";
-    }
 
     // Lógica para ejecutar la animación correcta
 

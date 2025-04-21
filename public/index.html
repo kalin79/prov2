@@ -4,8 +4,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PRO :: Todos los PRO necesitan PROTEINAS</title>
-    <link rel="stylesheet" href="css/estilos.css">
+    <title>Bebidas Pro Power y Pro Day</title>
+    <!-- Descripción del contenido (entre 150 y 160 caracteres) -->
+    <meta name="description" content="">
+
+    <!-- Autor -->
+    <meta name="author" content="Gloria">
+
+    <!-- meta facebook -->
+    <meta property="og:title" content="Bebidas Pro Power y Pro Day">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="https://properu.com.pe/share.jpg">
+    <meta property="og:url" content="https://properu.com.pe/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Bebidas Pro Power y Pro Day">
+
+    <!-- meta twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Bebidas Pro Power y Pro Day">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:image" content="https://properu.com.pe/share.jpg">
+    <meta name="twitter:site" content="@gloriaPro">
+
+    <link rel="canonical" href="https://properu.com.pe/">
+
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="css/estilos.css?v=12">
 </head>
 
 <body>
@@ -16,7 +41,9 @@
                 <div class="gridContainer">
                     <div>
                         <div class="logoMenu">
-                            <img src="images/logoPRO.svg" alt="PRO" />
+                            <a href="/">
+                                <img src="images/logoPRO.svg" alt="PRO" />
+                            </a>
                         </div>
                     </div>
                     <div>
@@ -84,8 +111,18 @@
                             </div>
                             <div class="panelDer">
                                 <div class="flechaContainer">
-                                    <img src="images/flecha.webp" alt="Flecha" class="flechaImg" />
-                                    <img src="images/botella.webp" alt="Pro Activo" class="botellaImg" />
+                                    <figure class="flechaImg">
+                                        <picture>
+                                            <source media="(min-width: 992px)" srcset="images/flecha.webp">
+                                            <img src="images/flechaM.webp" alt="" />
+                                        </picture>
+                                    </figure>
+                                    <figure class="botellaImg">
+                                        <picture>
+                                            <source media="(min-width: 992px)" srcset="images/botella.webp">
+                                            <img src="images/botellaM.webp" alt="" />
+                                        </picture>
+                                    </figure>
                                 </div>
                                 <div class="titularContainer">
                                     <div class="centerInfo">
@@ -164,8 +201,18 @@
                             </div>
                             <div class="panelDer">
                                 <div class="flechaContainer">
-                                    <img src="images/flecha.webp" alt="Flecha" class="flechaImg" />
-                                    <img src="images/botella2.webp" alt="Pro Activo" class="botellaImg" />
+                                    <figure class="flechaImg">
+                                        <picture>
+                                            <source media="(min-width: 992px)" srcset="images/flecha.webp">
+                                            <img src="images/flechaM.webp" alt="" />
+                                        </picture>
+                                    </figure>
+                                    <figure class="botellaImg">
+                                        <picture>
+                                            <source media="(min-width: 992px)" srcset="images/botella2.webp">
+                                            <img src="images/botella2M.webp" alt="" />
+                                        </picture>
+                                    </figure>
                                 </div>
                                 <div class="titularContainer">
                                     <div class="centerInfo">
@@ -201,7 +248,12 @@
 
         <div class="sectionProContainer">
             <div>
-                <img src="images/bpro1.webp" alt="Pro Love" />
+                <figure>
+                    <picture>
+                        <source media="(min-width: 992px)" srcset="images/bpro1.webp">
+                        <img src="images/bpro1M.webp" alt="" />
+                    </picture>
+                </figure>
             </div>
             <div class="carruselContainerProductos">
                 <div class="fondoProductos">
@@ -236,26 +288,40 @@
                 </div>
                 <div class="carruselInterno">
                     <div class="cardContainer">
-                        <img src="images/proP1.webp" alt="Pro" />
+                        <a href="">
+                            <img src="images/ppro1.webp" alt="Sabor caramel macchiato" />
+                            <div class="titularBoxProducto">
+                                <h3><span>PRO</span>POWER</h3>
+                                <p>Sabor caramel <br />macchiato</p>
+                            </div>
+
+                        </a>
+
                     </div>
                     <div class="cardContainer">
-                        <img src="images/proP1.webp" alt="Pro" />
+                        <a href="">
+                            <img src="images/ppro3.webp" alt="Sabor dark chocolate" />
+                            <div class="titularBoxProducto">
+                                <h3><span>PRO</span>POWER</h3>
+                                <p>Sabor dark <br />chocolate</p>
+                            </div>
+                        </a>
                     </div>
                     <div class="cardContainer">
-                        <img src="images/proP1.webp" alt="Pro" />
-                    </div>
-                    <div class="cardContainer">
-                        <img src="images/proP1.webp" alt="Pro" />
-                    </div>
-                    <div class="cardContainer">
-                        <img src="images/proP1.webp" alt="Pro" />
+                        <a href="">
+                            <img src="images/ppro2.webp" alt="Yogurt parcialmente descremado sabor sauco" />
+                            <div class="titularBoxProducto">
+                                <h3><span>PRO</span>POWER</h3>
+                                <p>Yogurt parcialmente <br />descremado sabor sauco</p>
+                            </div>
+                        </a>
                     </div>
                 </div>
                 <div class="botonesCarrusel">
-                    <button id="btnNext">
+                    <button id="btnPrev">
                         <img src="images/arrow3.svg" alt="Next" />
                     </button>
-                    <button id="btnPrev">
+                    <button id="btnNext">
                         <img src="images/arrow3.svg" alt="Prev" />
                     </button>
                 </div>
@@ -263,7 +329,12 @@
         </div>
         <div class="sectionDayContainer">
             <div>
-                <img src="images/bpro2.webp" alt="Day Love" />
+                <figure>
+                    <picture>
+                        <source media="(min-width: 992px)" srcset="images/bpro2.webp">
+                        <img src="images/bpro2M.webp" alt="" />
+                    </picture>
+                </figure>
             </div>
             <div class="carruselContainerProductos">
                 <div class="fondoProductos">
@@ -292,26 +363,63 @@
                 </div>
                 <div class="carruselInterno">
                     <div class="cardContainer">
-                        <img src="images/proP1.webp" alt="Pro" />
+                        <a href="">
+                            <img src="images/pproday1.webp" alt="Pro" />
+                            <div class="titularBoxProducto">
+                                <h3><span>DAY </span>POWER</h3>
+                                <p>Sabor chocolate</p>
+                            </div>
+                        </a>
                     </div>
                     <div class="cardContainer">
-                        <img src="images/proP1.webp" alt="Pro" />
+                        <a href="">
+                            <img src="images/pproday2.webp" alt="Pro" />
+                            <div class="titularBoxProducto">
+                                <h3><span>DAY </span>POWER</h3>
+                                <p>Sabor vainilla</p>
+                            </div>
+                        </a>
                     </div>
                     <div class="cardContainer">
-                        <img src="images/proP1.webp" alt="Pro" />
+                        <a href="">
+                            <img src="images/pproday3.webp" alt="Pro" />
+                            <div class="titularBoxProducto">
+                                <h3><span>DAY </span>POWER</h3>
+                                <p>
+                                    Yogurt parcialmente <br />
+                                    descremado con avena, <br />
+                                    sin lactosa.
+                                </p>
+                            </div>
+
+                        </a>
                     </div>
                     <div class="cardContainer">
-                        <img src="images/proP1.webp" alt="Pro" />
+                        <a href="">
+                            <img src="images/pproday4.webp" alt="Pro" />
+                            <div class="titularBoxProducto">
+                                <h3><span>DAY </span>POWER</h3>
+                                <p>
+                                    Sabor mora
+                                </p>
+                            </div>
+                        </a>
                     </div>
                     <div class="cardContainer">
-                        <img src="images/proP1.webp" alt="Pro" />
+                        <a href="">
+                            <img src="images/pproday5.webp" alt="Pro" />
+                            <div class="titularBoxProducto">
+                                <h3><span>DAY </span>POWER</h3>
+                                <p>Sabor manzana verde</p>
+                            </div>
+                        </a>
                     </div>
                 </div>
                 <div class="botonesCarrusel">
-                    <button id="btnNext2">
+                    <button id="btnPrev2">
                         <img src="images/arrow3.svg" alt="Next" />
                     </button>
-                    <button id="btnPrev2">
+                    <button id="btnNext2">
                         <img src="images/arrow3.svg" alt="Prev" />
                     </button>
                 </div>
@@ -322,12 +430,14 @@
         </div>
         <footer>
             <div class="containerContent">
-                <div class="hashTagContainer">
-                    <h3>#hazlo<span>pro</span></h3>
-                </div>
                 <div class="navFooterContainer">
+                    <div class="hashTagContainer">
+                        <h3>#hazlo<span>pro</span></h3>
+                    </div>
                     <div>
-                        <img src="images/logoPRO.svg" alt="Pro Activo" />
+                        <a href="/">
+                            <img src="images/logoPRO.svg" alt="Pro Activo" />
+                        </a>
                     </div>
                     <!-- <div>
                         <a href="/">Inicio</a>
@@ -335,17 +445,17 @@
                         <a href="/">PRO DAY</a>
                     </div> -->
                     <div>
-                        <h3>PRO POWER</h3>
+                        <h3 class="colorRojo">PRO POWER</h3>
                         <div class="listProductos">
                             <a href="/bebidas/pro-power-bebida-lactea-sabor-dark-chocolate" class="">PRO POWER
                                 Dark Chocolate</a>
-                            <a href="bebidas/pro-power-bebida-lactea-sabor-caramel-macciato">PRO POWER Caramel
+                            <a href="/bebidas/pro-power-bebida-lactea-sabor-caramel-macciato">PRO POWER Caramel
                                 Macchiato</a>
                             <a href="/yogures/pro-power-yogurt-cuchareable-sauco">PRO POWER Yogurt Cuchareable Sauco</a>
                         </div>
                     </div>
                     <div>
-                        <h3>PRO DAY</h3>
+                        <h3 class="colorMorado">PRO DAY</h3>
                         <div class="listProductos">
                             <a href="/bebidas/pro-day-bebida-lactea-sabor-vainilla">PRO DAY Vainilla</a>
                             <a href="/bebidas/pro-day-bebida-lactea-sabor-chocolate">PRO DAY Chocolate</a>
@@ -372,7 +482,11 @@
                 </div>
                 <div class="legalContainer">
                     <div>
-                        <p>Copyright © 2025 PRO - Todos los derechos reservados</p>
+                        <p class="pD">Copyright © 2025 PRO - Todos los derechos reservados</p>
+                        <p class="pM">
+                            Copyright © 2025 PRO <br />
+                            Todos los derechos reservados
+                        </p>
                     </div>
                     <div>
                         <a href="/politica-de-privacidad.html">Política de privacidad</a>
@@ -386,7 +500,7 @@
 
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script type="module" src="js/main.js"></script>
+    <script type="module" src="js/main.js?v=10"></script>
 
 </body>
 
