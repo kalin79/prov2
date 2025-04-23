@@ -315,13 +315,13 @@ body {
     }
 
     .panelIzq {
-        width: 400px;
+        width: 100%;
         height: 270px;
         background: $rojo;
         overflow: hidden;
         order: 2;
 
-        @media screen and (min-width: 1200px) {
+        @media screen and (min-width: 992px) {
             width: 400px;
         }
 
@@ -652,38 +652,172 @@ body {
 // Seccion Pro Home
 
 .sectionProContainer {
+    width: 100%;
+    overflow: hidden;
 
-    height: auto;
+    .gridContainer {
+        height: 650px;
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 1rem;
 
-    @media screen and (min-width: 768px) {
-        height: 680px;
-        display: flex;
-    }
+        @media screen and (min-width: 1400px) {
+            height: 780px;
+        }
 
-    @media screen and (min-width: 992px) {
-        height: 100vh;
-        display: flex;
-    }
+        >div {
+            height: 650px;
+            box-sizing: border-box;
 
-    @media screen and (min-width: 1600px) {
-        height: 900px;
-    }
-
-    >div {
-        &:first-child {
-            width: 100%;
-            display: block;
-            height: 500px;
-
-            @media screen and (min-width: 992px) {
-                width: 33.33%;
-                height: auto;
-                display: block;
+            @media screen and (min-width: 1400px) {
+                height: 780px;
             }
 
-            figure {
-                margin: 0;
+            &:nth-child(2) {
+                grid-column: 4 / span 4;
+
+                .fondoProductos {
+                    height: 650px;
+                    position: relative;
+                    left: -2vw;
+                    width: 109%;
+
+                    @media screen and (min-width: 1400px) {
+                        height: 780px;
+                    }
+
+                    .contenedorFondoProducto {
+                        width: 100%;
+                        height: 100%;
+                        position: relative;
+                        padding-bottom: 4rem;
+
+                        @media screen and (min-width: 992px) {
+                            padding-bottom: 0rem;
+                        }
+
+                        .titularContenedor {
+                            position: relative;
+                            z-index: 10;
+                            padding: 9rem 0 0 1rem;
+                            display: inline-block;
+
+                            @media screen and (min-width: 992px) {
+                                padding: 9rem 0 0 4.5rem;
+                            }
+
+                            @media screen and (min-width: 1400px) {
+                                padding: 12rem 0 0 5rem;
+                            }
+
+                            p {
+                                font-family: "Poppins", sans-serif;
+                                font-weight: 500;
+                                font-style: italic;
+                                font-size: 1.25rem;
+                                line-height: 1em;
+                                color: white;
+                                text-align: left;
+                                margin-top: 0rem;
+
+                                @media screen and (min-width: 992px) {
+                                    font-size: .85rem;
+                                    text-align: right;
+                                }
+
+                                @media screen and (min-width: 1200px) {
+                                    font-size: 1rem;
+                                    margin-top: -.65rem;
+                                }
+
+
+
+                                br {
+                                    display: none;
+
+                                    @media screen and (min-width: 992px) {
+                                        display: block;
+                                    }
+                                }
+                            }
+
+                            h2 {
+                                font-family: 'ROUND 8 FIVE';
+                                font-style: italic;
+                                font-size: 5.5rem;
+                                color: white;
+                                line-height: .85em;
+
+                                @media screen and (min-width: 992px) {
+                                    font-size: 4rem;
+                                }
+
+                                @media screen and (min-width: 1200px) {
+                                    font-size: 4rem;
+                                }
+
+                                @media screen and (min-width: 1400px) {
+                                    font-size: 5rem;
+                                }
+
+                                span {
+                                    color: black;
+                                }
+
+                            }
+                        }
+
+                        .bgProducto {
+                            height: 100%;
+                            width: 100%;
+                            object-fit: cover;
+                            object-position: left;
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                        }
+                    }
+
+                }
+
+            }
+
+            &:nth-child(3) {
+                grid-column: 8 / -1;
+
+                .viewProduct {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+                    height: 100%;
+                    height: 650px;
+
+                    @media screen and (min-width: 1400px) {
+                        height: 780px;
+                    }
+
+                    img {
+                        width: 500px;
+                        height: auto;
+                        object-fit: contain;
+                    }
+                }
+
+            }
+
+            &:nth-child(1) {
+                grid-column: 1 / span 3;
+                width: 100%;
                 height: 100%;
+
+                figure {
+                    margin: 0;
+                    height: 100%;
+                    width: 120%;
+                    position: relative;
+                    left: -2vw;
+                }
 
                 img {
                     height: 100%;
@@ -692,738 +826,185 @@ body {
                 }
 
             }
-
-
-        }
-
-        &:last-child {
-            flex: 1;
-            position: relative;
-
-            .flechaContenedor {
-                position: absolute;
-                top: 7rem;
-                left: -4.5em;
-                opacity: 0;
-
-                @media screen and (min-width: 992px) {
-                    opacity: 1;
-                }
-
-                img {
-                    width: 147px;
-                    object-fit: contain;
-                    height: auto;
-                }
-            }
-
-            .botonesCarrusel {
-                position: absolute;
-                bottom: 0;
-                right: 0rem;
-                display: flex;
-                gap: .25rem;
-                opacity: 0;
-
-                @media screen and (min-width: 992px) {
-                    right: 5rem;
-                    opacity: 1;
-                }
-
-                button {
-                    width: 60px;
-                    height: 60px;
-                    background: rgba(black, .70);
-                    z-index: 40;
-                    border: 0;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    flex-direction: column;
-                    cursor: pointer;
-                    padding: 1rem;
-
-
-                    @media screen and (min-width: 768px) {
-                        width: 120px;
-                        height: 120px;
-                        padding: 1rem;
-                    }
-
-                    img {
-                        width: 100%;
-                        height: 100%;
-                        object-fit: contain;
-
-                        @media screen and (min-width: 992px) {
-                            width: 100%;
-                            height: 100%;
-                            object-fit: contain;
-                        }
-                    }
-
-
-
-                    &:last-child {
-                        transform: scaleX(-1)
-                    }
-                }
-            }
-
-
-
-            .carruselInterno {
-                background: url("../images/bgBlack.webp");
-                background-size: cover;
-                background-position: center right;
-                z-index: 20;
-                position: relative;
-                height: auto;
-                overflow: hidden;
-                display: flex;
-                flex-wrap: nowrap;
-                flex-direction: column;
-                gap: 1rem;
-
-
-
-                // @media screen and (min-width: 768px) {
-                //     height: 100%;
-                //     background: transparent;
-                // }
-
-                @media screen and (min-width: 992px) {
-                    background: transparent;
-                    height: 100%;
-                    flex-direction: row;
-                    gap: 0rem;
-                }
-
-                .cardContainer {
-                    flex: 0 0 70%;
-                    /* No crecer, no reducir, ancho fijo de 300px */
-                    height: 100%;
-                    width: 100%;
-                    border-bottom: 1px solid $rojo;
-                    padding: 2rem 0;
-
-                    &:last-child {
-                        border: 0;
-                    }
-
-                    @media screen and (min-width: 992px) {
-                        width: 70%;
-                        padding: 0;
-                        border-bottom: 0px solid $rojo;
-                    }
-
-                    a {
-                        display: block;
-                        text-decoration: none;
-                        height: 100%;
-                        width: 100%;
-                    }
-
-                    img {
-                        transition: .5s all ease-in;
-                        height: 100%;
-                        width: 100%;
-                        object-fit: cover;
-                    }
-
-                    .titularBoxProducto {
-                        @media screen and (min-width: 992px) {
-                            position: absolute;
-                            top: 10rem;
-                            left: 1.75rem;
-                        }
-
-
-                        h3 {
-                            font-size: 3.125rem;
-                            color: white;
-                            font-family: 'Round8Four', sans-serif;
-                            font-weight: inherit;
-                            margin: 0;
-                            line-height: .55em;
-                            display: none;
-
-                            @media screen and (min-width: 992px) {
-                                display: inline-block;
-                            }
-
-                            span {
-                                color: $rojo;
-                            }
-                        }
-                    }
-
-                    p {
-                        font-family: 'Poppins';
-                        font-size: 1rem;
-                        color: white;
-                        line-height: 1.5em;
-                        text-align: center;
-
-                        @media screen and (min-width: 992px) {
-                            text-align: left;
-                        }
-                    }
-                }
-            }
-
-            .rejasContainer {
-                position: absolute;
-                width: 87px;
-                height: 260px;
-                overflow: hidden;
-                z-index: 10;
-
-                img {
-                    width: 100%;
-                    height: auto;
-                    object-fit: contain;
-                }
-
-                &.pos1 {
-                    top: 0rem;
-                    right: 0rem;
-                    left: auto;
-
-                    @media screen and (min-width: 992px) {
-                        left: 0rem;
-                        right: auto;
-                    }
-
-                    img {
-                        position: relative;
-                        top: 0rem;
-
-                        @media screen and (min-width: 992px) {
-                            top: -10rem;
-                        }
-                    }
-                }
-
-                &.pos2 {
-                    bottom: -6rem;
-                    left: 0rem;
-                    opacity: 0;
-
-                    @media screen and (min-width: 992px) {
-                        opacity: 1;
-                    }
-
-                    img {
-                        position: relative;
-                        top: 0rem;
-                    }
-                }
-
-                &.pos3 {
-                    bottom: -0.25rem;
-                    left: 50%;
-                    transform: translateX(-50%);
-                    opacity: 0;
-
-                    @media screen and (min-width: 992px) {
-                        opacity: 1;
-                    }
-
-                    img {
-                        position: relative;
-                        top: 0rem;
-                    }
-                }
-            }
-
-            .fondoProductos {
-                position: relative;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-
-                @media screen and (min-width: 768px) {
-                    position: absolute;
-                }
-
-                .contenedorFondoProducto {
-                    width: 100%;
-                    height: 100%;
-                    position: relative;
-                    padding-bottom: 4rem;
-
-                    @media screen and (min-width: 768px) {
-                        padding-bottom: 0rem;
-                    }
-
-                    .titularContenedor {
-                        position: relative;
-                        z-index: 10;
-                        padding: 9rem 0 0 1rem;
-                        display: inline-block;
-
-                        @media screen and (min-width: 768px) {
-                            padding: 14rem 0 0 1rem;
-                        }
-
-                        p {
-                            font-family: "Poppins", sans-serif;
-                            font-weight: 500;
-                            font-style: italic;
-                            font-size: 1.25rem;
-                            line-height: 1em;
-                            color: white;
-                            text-align: left;
-                            margin-top: 0rem;
-
-                            @media screen and (min-width: 992px) {
-                                font-size: 1rem;
-                                margin-right: 3.5rem;
-                                text-align: right;
-                            }
-
-                            @media screen and (min-width: 1200px) {
-                                font-size: 1rem;
-                                margin-right: 4rem;
-                                margin-top: -.65rem;
-                            }
-
-                            @media screen and (min-width: 1400px) {
-                                font-size: 1.25rem;
-                            }
-
-                            br {
-                                display: none;
-
-                                @media screen and (min-width: 992px) {
-                                    display: block;
-                                }
-                            }
-                        }
-
-                        h2 {
-                            font-family: 'ROUND 8 FIVE';
-                            font-style: italic;
-                            font-size: 5.5rem;
-                            color: white;
-                            line-height: .85em;
-
-                            @media screen and (min-width: 992px) {
-                                font-size: 5.65rem;
-                            }
-
-                            @media screen and (min-width: 1200px) {
-                                font-size: 5.80rem;
-                            }
-
-                            @media screen and (min-width: 1400px) {
-                                font-size: 7.5rem;
-                            }
-
-                            span {
-                                color: black;
-                            }
-
-                        }
-                    }
-
-                    .bgProducto {
-                        height: 100%;
-                        width: 100%;
-                        object-fit: cover;
-                        object-position: right;
-                        position: absolute;
-                        top: 0;
-                        left: 0;
-                    }
-                }
-
-            }
         }
     }
+
 }
 
 // Seccion Day Home
 
 .sectionDayContainer {
-    height: auto;
+    width: 100%;
     overflow: hidden;
 
-    @media screen and (min-width: 768px) {
-        height: 680px;
-        display: flex;
-    }
+    .gridContainer {
+        height: 650px;
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 1rem;
 
-    @media screen and (min-width: 992px) {
-        height: 100vh;
-        display: flex;
-    }
-
-    @media screen and (min-width: 1600px) {
-        height: 900px;
-    }
-
-    >div {
-        &:first-child {
-
-            width: 100%;
-            height: 500px;
-
-            @media screen and (min-width: 992px) {
-                width: 33.33%;
-                height: auto;
-            }
-
-            figure {
-                margin: 0;
-                height: 100%;
-            }
-
-            img {
-                height: 100%;
-                width: 100%;
-                object-fit: cover;
-            }
+        @media screen and (min-width: 1400px) {
+            height: 780px;
         }
 
-        &:last-child {
-            flex: 1;
-            position: relative;
+        >div {
+            height: 650px;
+            box-sizing: border-box;
 
-            .flechaContenedor {
-                position: absolute;
-                top: 7rem;
-                left: -4.5em;
-                opacity: 0;
-
-                @media screen and (min-width: 992px) {
-                    opacity: 1;
-                }
-
-                img {
-                    width: 147px;
-                    object-fit: contain;
-                    height: auto;
-                }
+            @media screen and (min-width: 1400px) {
+                height: 780px;
             }
 
-            .botonesCarrusel {
-                position: absolute;
-                bottom: 0;
-                right: 0rem;
-                display: flex;
-                gap: .25rem;
-                opacity: 0;
+            &:nth-child(2) {
+                grid-column: 4 / span 4;
 
-                @media screen and (min-width: 992px) {
-                    right: 5rem;
-                    opacity: 1;
+                .fondoProductos {
+                    height: 650px;
+                    position: relative;
+                    left: -2vw;
+                    width: 109%;
+
+                    @media screen and (min-width: 1400px) {
+                        height: 780px;
+                    }
+
+                    .contenedorFondoProducto {
+                        width: 100%;
+                        height: 100%;
+                        position: relative;
+                        padding-bottom: 4rem;
+
+                        @media screen and (min-width: 992px) {
+                            padding-bottom: 0rem;
+                        }
+
+                        .titularContenedor {
+                            position: relative;
+                            z-index: 10;
+                            padding: 9rem 0 0 1rem;
+                            display: inline-block;
+
+                            @media screen and (min-width: 992px) {
+                                padding: 9rem 0 0 4.5rem;
+                            }
+
+                            @media screen and (min-width: 1400px) {
+                                padding: 12rem 0 0 5rem;
+                            }
+
+                            p {
+                                font-family: "Poppins", sans-serif;
+                                font-weight: 500;
+                                font-style: italic;
+                                font-size: 1.25rem;
+                                line-height: 1em;
+                                color: white;
+                                text-align: left;
+                                margin-top: 0rem;
+
+                                @media screen and (min-width: 992px) {
+                                    font-size: .85rem;
+                                    text-align: right;
+                                }
+
+                                @media screen and (min-width: 1200px) {
+                                    font-size: 1rem;
+                                    margin-top: -.65rem;
+                                }
+
+
+
+                                br {
+                                    display: none;
+
+                                    @media screen and (min-width: 992px) {
+                                        display: block;
+                                    }
+                                }
+                            }
+
+                            h2 {
+                                font-family: 'ROUND 8 FIVE';
+                                font-style: italic;
+                                font-size: 5.5rem;
+                                color: white;
+                                line-height: .85em;
+
+                                @media screen and (min-width: 992px) {
+                                    font-size: 4rem;
+                                }
+
+                                @media screen and (min-width: 1200px) {
+                                    font-size: 4rem;
+                                }
+
+                                @media screen and (min-width: 1400px) {
+                                    font-size: 5rem;
+                                }
+
+                                span {
+                                    color: $grisOscuro;
+                                }
+
+                            }
+                        }
+
+                        .bgProducto {
+                            height: 100%;
+                            width: 100%;
+                            object-fit: cover;
+                            object-position: left;
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                        }
+                    }
+
                 }
 
-                button {
-                    width: 60px;
-                    height: 60px;
-                    background: rgba(black, .70);
-                    z-index: 40;
-                    border: 0;
+            }
+
+            &:nth-child(3) {
+                grid-column: 8 / -1;
+
+
+                .viewProduct {
                     display: flex;
                     justify-content: center;
                     align-items: center;
                     flex-direction: column;
-                    cursor: pointer;
-                    padding: 1rem;
+                    height: 650px;
 
-                    @media screen and (min-width: 768px) {
-                        width: 120px;
-                        height: 120px;
-                        padding: 1rem;
+                    @media screen and (min-width: 1400px) {
+                        height: 780px;
                     }
 
                     img {
-                        width: 100%;
-                        height: 100%;
+                        width: 500px;
+                        height: auto;
                         object-fit: contain;
-
-                        @media screen and (min-width: 992px) {
-                            width: 100%;
-                            height: 100%;
-                            object-fit: contain;
-                        }
-                    }
-
-
-
-                    &:last-child {
-                        transform: scaleX(-1)
                     }
                 }
+
             }
 
-            .carruselInterno {
-                background: url("../images/bgBlack.webp");
-                background-size: cover;
-                background-position: center right;
-                z-index: 20;
-                position: relative;
-                height: auto;
-                overflow: hidden;
-                display: flex;
-                flex-wrap: nowrap;
-                flex-direction: column;
-                gap: 1rem;
-
-                @media screen and (min-width: 992px) {
-                    background: url("../images/fondoPro.webp");
-                    height: 550px;
-                    flex-direction: row;
-                    gap: 0;
-                }
-
-                @media screen and (min-width: 768px) {
-                    height: 100%;
-                    background: transparent;
-                }
-
-                @media screen and (min-width: 992px) {
-                    // height: 100%;
-                    background: transparent;
-                }
-
-                .cardContainer {
-                    flex: 0 0 70%;
-                    /* No crecer, no reducir, ancho fijo de 300px */
-                    height: 100%;
-                    width: 100%;
-                    border-bottom: 1px solid $rojo;
-                    padding: 2rem 0;
-
-                    &:last-child {
-                        border: 0;
-                    }
-
-                    @media screen and (min-width: 992px) {
-                        width: 70%;
-                        padding: 0;
-                        border-bottom: 0px solid $rojo;
-                    }
-
-                    a {
-                        display: block;
-                        text-decoration: none;
-                        height: 100%;
-                        width: 100%;
-                        position: relative;
-                    }
-
-                    img {
-                        transition: .5s all ease-in;
-                        height: 100%;
-                        width: 100%;
-                        object-fit: cover;
-                    }
-
-                    p {
-                        font-family: 'Poppins';
-                        font-size: 1rem;
-                        color: white;
-                        line-height: 1.5em;
-                        text-align: center;
-
-                        @media screen and (min-width: 992px) {
-                            text-align: left;
-                        }
-
-                    }
-
-                    .titularBoxProducto {
-                        @media screen and (min-width: 992px) {
-                            position: absolute;
-                            top: 10rem;
-                            left: 1.75rem;
-                        }
-
-
-                        h3 {
-                            font-size: 3.125rem;
-                            color: white;
-                            font-family: 'Round8Four', sans-serif;
-                            font-weight: inherit;
-                            margin: 0;
-                            line-height: .55em;
-                            display: none;
-
-                            @media screen and (min-width: 992px) {
-                                display: inline-block;
-                            }
-
-                            span {
-                                color: $morado;
-                            }
-                        }
-                    }
-
-
-                }
-            }
-
-            .rejasContainer {
-                position: absolute;
-                width: 87px;
-                height: 260px;
-                overflow: hidden;
-                z-index: 10;
-
-                img {
-                    width: 100%;
-                    height: auto;
-                    object-fit: contain;
-                }
-
-                &.pos1 {
-                    top: 0rem;
-                    left: 0rem;
-
-                    img {
-                        position: relative;
-                        top: -10rem;
-                    }
-                }
-
-                &.pos2 {
-                    bottom: -6rem;
-                    left: 0rem;
-
-                    img {
-                        position: relative;
-                        top: 0rem;
-                    }
-                }
-
-                &.pos3 {
-                    bottom: auto;
-                    top: 0;
-                    left: auto;
-                    right: 0;
-                    transform: 0;
-
-                    @media screen and (min-width: 992px) {
-                        bottom: -0.25rem;
-                        top: 0;
-                        left: 50%;
-                        right: 0;
-                        transform: translateX(-50%);
-                    }
-
-                    img {
-                        position: relative;
-                        top: 0rem;
-                    }
-                }
-            }
-
-            .fondoProductos {
-                position: relative;
-                top: 0;
-                left: 0;
+            &:nth-child(1) {
+                grid-column: 1 / span 3;
                 width: 100%;
                 height: 100%;
 
-                @media screen and (min-width: 768px) {
-                    position: absolute;
+                figure {
+                    margin: 0;
+                    height: 100%;
+                    width: 120%;
+                    position: relative;
+                    left: -2vw;
                 }
 
-                .contenedorFondoProducto {
-                    width: 100%;
+                img {
                     height: 100%;
-                    position: relative;
-                    padding-bottom: 4rem;
-
-                    @media screen and (min-width: 992px) {
-                        padding-bottom: 0rem;
-                    }
-
-                    .titularContenedor {
-                        position: relative;
-                        z-index: 10;
-                        padding: 9rem 0 0 1rem;
-                        display: inline-block;
-
-                        @media screen and (min-width: 992px) {
-                            padding: 14rem 0 0 1rem;
-                        }
-
-                        p {
-                            font-family: "Poppins", sans-serif;
-                            font-weight: 500;
-                            font-style: italic;
-                            font-size: 1.25rem;
-                            line-height: 1em;
-                            color: white;
-                            text-align: left;
-                            margin-top: 0rem;
-
-                            @media screen and (min-width: 992px) {
-                                font-size: 1rem;
-                                margin-right: 3.5rem;
-                                text-align: right;
-                            }
-
-                            @media screen and (min-width: 1200px) {
-                                font-size: 1rem;
-                                margin-right: 4rem;
-                                margin-top: -.65rem;
-                            }
-
-                            @media screen and (min-width: 1400px) {
-                                font-size: 1.25rem;
-                            }
-
-                            br {
-                                display: none;
-
-                                @media screen and (min-width: 992px) {
-                                    display: block;
-                                }
-                            }
-                        }
-
-                        h2 {
-                            font-family: 'ROUND 8 FIVE';
-                            font-style: italic;
-                            font-size: 5.5rem;
-                            color: white;
-                            line-height: .85em;
-
-                            @media screen and (min-width: 992px) {
-                                font-size: 5.65rem;
-                            }
-
-                            @media screen and (min-width: 1200px) {
-                                font-size: 5.8rem;
-                            }
-
-                            @media screen and (min-width: 1400px) {
-                                font-size: 7.5rem;
-                            }
-
-                            span {
-                                color: $grisOscuro;
-                            }
-
-                        }
-                    }
-
-                    .bgProducto {
-                        height: 100%;
-                        width: 100%;
-                        object-fit: cover;
-                        object-position: right;
-                        position: absolute;
-                        top: 0;
-                        left: 0;
-                    }
+                    width: 100%;
+                    object-fit: cover;
                 }
 
             }
@@ -1436,7 +1017,7 @@ body {
     background-size: cover;
     background-position: center;
     width: 100%;
-    height: 680px;
+    height: 960px;
 
     @media screen and (min-width: 992px) {
         background: url("../images/beneficiobg.webp");
@@ -1444,16 +1025,127 @@ body {
         background-position: center;
     }
 
-    @media screen and (min-width: 992px) {
-        height: 600px;
+    // @media screen and (min-width: 992px) {
+    //     height: 600px;
+    // }
+
+    // @media screen and (min-width: 1400px) {
+    //     height: 700px;
+    // }
+
+    // @media screen and (min-width: 1600px) {
+    //     height: 900px;
+    // }
+
+    .infoBeneficios {
+        padding-top: 8rem;
+
+        h3 {
+            font-size: 5rem;
+            color: white;
+            font-family: 'Round8Four', sans-serif;
+            font-weight: inherit;
+            text-align: center;
+            line-height: .9em;
+        }
     }
 
-    @media screen and (min-width: 1400px) {
-        height: 700px;
-    }
+    .detalleBeneficio {
+        margin-top: 12rem;
 
-    @media screen and (min-width: 1600px) {
-        height: 900px;
+        h4 {
+            font-size: 10.75rem;
+            color: $rojo;
+            font-family: 'Round8Four', sans-serif;
+            font-weight: inherit;
+            text-align: center;
+            line-height: .9em;
+        }
+
+        .mantoBeneficio {
+            position: relative;
+            height: 200px;
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 1rem;
+
+            .contenedorBeneficio {
+
+                grid-column: 2 / span 10;
+            }
+
+            .gridBeneficio {
+                position: relative;
+                z-index: 2;
+                display: grid;
+                grid-template-columns: repeat(10, 1fr);
+                gap: 1rem;
+
+                .iconBene {
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: flex-start;
+                    gap: .75rem;
+
+                    img {
+                        object-fit: contain;
+                    }
+
+                    p {
+                        color: white;
+                        font-family: "Poppins", sans-serif;
+                        font-weight: 500;
+                        font-size: 1rem;
+                        line-height: 1em;
+                    }
+                }
+
+                >div {
+                    &:nth-child(1) {
+                        grid-column: 1 / -1;
+
+                        p {
+                            color: white;
+                            font-family: "Poppins", sans-serif;
+                            font-weight: 500;
+                            font-size: 1rem;
+                            line-height: 1em;
+                            text-align: center;
+                            padding: 2rem 0 1rem;
+                            margin: 0;
+                        }
+                    }
+
+                    &:nth-child(2) {
+                        grid-column: 2 / span 2;
+                        padding-left: 2rem;
+                    }
+
+                    &:nth-child(3) {
+                        grid-column: 5 / span 2;
+                    }
+
+                    &:nth-child(4) {
+                        grid-column: 8 / span 2;
+                    }
+                }
+            }
+
+            .trapecioBlur {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                background: rgba(12, 12, 12, 0.25);
+                /* semitransparente */
+                backdrop-filter: blur(10px);
+                -webkit-backdrop-filter: blur(10px);
+                clip-path: polygon(198px 81.18%, 86.49% 82.8%, 89.84% 0px, 20% 0px);
+                z-index: 1;
+                left: 0px;
+                top: 0px;
+            }
+
+        }
     }
 
 }
@@ -2247,15 +1939,149 @@ body {
         grid-template-columns: repeat(12, 1fr);
         gap: 1rem;
 
-        >div {
-            &:nth-child(1) {
-                grid-column: 1 / -1;
-                padding-top: 8rem;
-                position: relative;
+        .items1 {
+            grid-column: 1 / -1;
+            padding-top: 8rem;
+            position: relative;
+
+            @media screen and (min-width: 992px) {
+                grid-column: 1 / span 3;
+            }
+
+            .boxReja {
+                position: absolute;
+                top: 0rem;
+                left: -2vw;
+
+                img {
+                    height: 100px;
+                    object-fit: contain;
+                    width: auto;
+                }
+            }
+
+            h3 {
+                margin: 0;
+                font-family: 'Round8Four';
+                font-size: 5.625rem;
+                color: white;
+                line-height: .8em;
+
+                span {
+                    color: $rojo;
+                }
+            }
+        }
+
+        .items2 {
+            @media screen and (min-width: 992px) {
+                grid-column: 4 / span 3;
+            }
+        }
+
+        .items3 {
+            @media screen and (min-width: 992px) {
+                grid-column: 7 / span 3;
+            }
+        }
+
+        .items4 {
+            @media screen and (min-width: 992px) {
+                grid-column: 10 / -1;
+            }
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .cardBody {
+            border: 1px solid rgba(white, .30);
+
+            img {
+                width: 100%;
+                height: 300px;
+                object-fit: contain;
 
                 @media screen and (min-width: 992px) {
-                    grid-column: 1 / span 4;
+                    height: 400px;
                 }
+
+                @media screen and (min-width: 992px) {
+                    height: 520px;
+                }
+            }
+        }
+
+        .cardFooter {
+            padding: 1rem 0 1rem;
+
+            h3 {
+                margin: 0;
+                font-family: "Round8Four";
+                font-size: 2.5rem;
+                color: $rojo;
+                line-height: 1em;
+                text-align: center;
+
+                span {
+                    color: white;
+                }
+            }
+
+            p {
+                margin: 0;
+                font-family: 'Poppins';
+                font-size: 1rem;
+                color: white;
+                font-style: italic;
+                line-height: 1em;
+                text-align: center;
+            }
+        }
+
+
+
+
+    }
+
+    &.bgDayInterna {
+        .gridContainer {
+            grid-template-columns: repeat(3, 1fr);
+            /* 4 columnas */
+            grid-template-rows: repeat(2, auto);
+
+            /* 2 filas */
+            .cardFooter {
+                padding: 1rem 0 1rem;
+
+                h3 {
+                    margin: 0;
+                    font-family: "Round8Four";
+                    font-size: 2.5rem;
+                    color: $morado;
+                    line-height: 1em;
+                    text-align: center;
+
+                    span {
+                        color: white;
+                    }
+                }
+
+                p {
+                    margin: 0;
+                    font-family: 'Poppins';
+                    font-size: 1rem;
+                    color: white;
+                    font-style: italic;
+                    line-height: 1em;
+                    text-align: center;
+                }
+            }
+
+            .info1Box {
+                position: relative;
+                padding-top: 8rem;
 
                 .boxReja {
                     position: absolute;
@@ -2277,100 +2103,13 @@ body {
                     line-height: .8em;
 
                     span {
-                        color: $rojo;
+                        color: $morado;
                     }
                 }
+
             }
 
-            &:nth-child(2) {
-                grid-column: 1 / -1;
-                display: grid;
-                grid-template-columns: repeat(2, 1fr);
-                gap: 1rem;
 
-                @media screen and (min-width: 992px) {
-                    grid-column: 5 / -1;
-                    grid-template-columns: repeat(2, 1fr);
-                }
-
-                @media screen and (min-width: 1600px) {
-                    grid-template-columns: repeat(4, 1fr);
-                }
-
-                .cardFamilia {
-                    width: 100%;
-                    text-decoration: none;
-
-                    .cardBody {
-                        border: 1px solid rgba(white, .30);
-
-                        img {
-                            width: 100%;
-                            height: 300px;
-                            object-fit: contain;
-
-                            @media screen and (min-width: 992px) {
-                                height: 400px;
-                            }
-
-                            @media screen and (min-width: 1600px) {
-                                height: 520px;
-                            }
-                        }
-                    }
-
-                    .cardFooter {
-                        padding: 1rem 0 1rem;
-
-                        h3 {
-                            margin: 0;
-                            font-family: 'Round8Four';
-                            font-size: 2.5rem;
-                            color: $rojo;
-                            line-height: 1em;
-                            text-align: center;
-
-                            span {
-                                color: white;
-                            }
-                        }
-
-                        p {
-                            margin: 0;
-                            font-family: 'Poppins';
-                            font-size: 1rem;
-                            color: white;
-                            font-style: italic;
-                            line-height: 1em;
-                            text-align: center;
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-    &.bgDayInterna {
-        .gridContainer {
-            >div {
-                &:nth-child(1) {
-                    h3 {
-                        span {
-                            color: $morado;
-                        }
-                    }
-                }
-
-                &:nth-child(2) {
-                    .cardFamilia {
-                        .cardFooter {
-                            h3 {
-                                color: $morado;
-                            }
-                        }
-                    }
-                }
-            }
         }
     }
 }
@@ -2776,4 +2515,32 @@ footer {
             }
         }
     }
+}
+
+.owl-carousel .owl-nav {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    pointer-events: none;
+    padding-left: 1rem;
+    /* permite clics solo sobre las flechas */
+}
+
+.owl-carousel .owl-nav button {
+    background: none;
+    border: none;
+    padding: 0;
+    pointer-events: all;
+    /* vuelve a activar clics en las flechas */
+    position: relative;
+    z-index: 10;
+}
+
+.owl-carousel .owl-nav img {
+    width: 40px;
+    height: auto;
+    cursor: pointer;
 }

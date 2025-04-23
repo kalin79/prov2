@@ -1,4 +1,61 @@
+$(document).ready(function () {
+    $(".owlCarrusel1").owlCarousel({
+        loop: true,
+        margin: 10,
+        responsiveClass: true,
+        navText: [
+            '<img src="images/flecha2.png" alt="Prev" />',
+            '<img src="images/flecha1.png" alt="Next" />'
+        ],
+        responsive: {
+            0: {
+                items: 1,
+                nav: true
+            },
+            600: {
+                items: 1,
+                nav: true
+            },
+            1000: {
+                items: 1,
+                nav: true,
+            }
+        }
+    });
+    $(".owlCarrusel2").owlCarousel({
+        loop: true,
+        margin: 10,
+        responsiveClass: true,
+        navText: [
+            '<img src="images/flecha2.png" alt="Prev" />',
+            '<img src="images/flecha1.png" alt="Next" />'
+        ],
+        responsive: {
+            0: {
+                items: 1,
+                nav: true
+            },
+            600: {
+                items: 1,
+                nav: true
+            },
+            1000: {
+                items: 1,
+                nav: true,
+            }
+        }
+    });
+});
+
 document.addEventListener("DOMContentLoaded", function () {
+
+    // const swiper = new Swiper('.mySwiper', {
+    //     navigation: {
+    //         nextEl: '.custom-button-next',
+    //         prevEl: '.custom-button-prev',
+    //     },
+    //     loop: true,
+    // });
 
 
     // Detectar el rango de pantalla actual
@@ -28,273 +85,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-
-
-
-
-    // Carrusel de DAY 
-
-    let currentIndex2 = 0;
-    const totalCards2 = document.querySelectorAll(".sectionDayContainer .cardContainer").length;
-    const items2 = document.querySelectorAll(".sectionDayContainer .cardContainer");
-    let isCarruselDay = false;
-
-    const showDaySlideNext = (index) => {
-        items2.forEach((item, i) => {
-            gsap.to(item, {
-                xPercent: "-=70", // mover cada item 100px a la derecha
-                duration: 0.5,
-                ease: "power2.out",
-                onComplete: () => {
-                    isCarruselDay = false;
-                }
-            });
-        });
-    };
-
-    const showDaySlideNext2 = (index) => {
-        items2.forEach((item, i) => {
-            gsap.to(item, {
-                xPercent: "-=100", // mover cada item 100px a la derecha
-                duration: 0.5,
-                ease: "power2.out",
-                onComplete: () => {
-                    isCarruselDay = false;
-                }
-            });
-        });
-    };
-
-    const showDaySlidePrev = (index) => {
-        items2.forEach((item, i) => {
-            gsap.to(item, {
-                xPercent: "+=100", // mover cada item 100px a la derecha
-                duration: 0.5,
-                ease: "power2.out",
-                onComplete: () => {
-                    isCarruselDay = false;
-                }
-            });
-        });
-    };
-
-    const showDaySlidePrev2 = (index) => {
-        console.log("s")
-        items2.forEach((item, i) => {
-            gsap.to(item, {
-                xPercent: "+=70", // mover cada item 100px a la derecha
-                duration: 0.5,
-                ease: "power2.out",
-                onComplete: () => {
-                    isCarruselDay = false;
-                }
-            });
-        });
-    };
-
-    document.getElementById("btnNext2").addEventListener("click", () => {
-        console.log(currentIndex2)
-        console.log(totalCards2 - 1)
-        console.log(isCarruselDay)
-
-
-
-        if (currentIndex2 <= totalCards2 - 1) {
-            if (!isCarruselDay) {
-                isCarruselDay = true;
-                currentIndex2++;
-                if (currentIndex2 > 1) {
-                    showDaySlideNext2(currentIndex2);
-                } else {
-                    showDaySlideNext(currentIndex2);
-                }
-            }
-        }
-
-
-    });
-
-    document.getElementById("btnPrev2").addEventListener("click", () => {
-        console.log(">>", currentIndex2)
-
-        if (currentIndex2 > 0) {
-            if (!isCarruselDay) {
-                isCarruselDay = true;
-                if (currentIndex2 > 1) {
-                    showDaySlidePrev(currentIndex2);
-                } else {
-                    showDaySlidePrev2(currentIndex2);
-                }
-                currentIndex2--;
-            }
-
-
-        }
-
-    });
-
-    function AnimarCarruselDay() {
-        console.log('entro');
-        items2.forEach((item, i) => {
-            gsap.to(item, {
-                xPercent: "+=70", // mover cada item 100px a la derecha
-                duration: 0.5,
-                ease: "power2.out"
-            });
-        });
-    }
-
-    function setupAnimation2() {
-
-        const device = getDeviceType();
-
-        console.log(device)
-
-        switch (device) {
-
-            case "desktop":
-                AnimarCarruselDay()
-                break;
-        }
-    }
-
-    // Ejecutar al cargar
-    setupAnimation2();
-
-    // fin del carrusel de day
-
-
-    // Carrusel  de PRO 
-
-    let currentIndex = 0;
-    const totalCards = document.querySelectorAll(".sectionProContainer .cardContainer").length;
-    const items = document.querySelectorAll(".sectionProContainer .cardContainer");
-    let isCarruselPro = false;
-
-    const showSlideNext = (index) => {
-        items.forEach((item, i) => {
-            gsap.to(item, {
-                xPercent: "-=70", // mover cada item 100px a la derecha
-                duration: 0.5,
-                ease: "power2.out",
-                onComplete: () => {
-                    isCarruselPro = false;
-                }
-            });
-        });
-    };
-
-    const showSlideNext2 = (index) => {
-        items.forEach((item, i) => {
-            gsap.to(item, {
-                xPercent: "-=100", // mover cada item 100px a la derecha
-                duration: 0.5,
-                ease: "power2.out",
-                onComplete: () => {
-                    isCarruselPro = false;
-                }
-            });
-        });
-    };
-
-    const showSlidePrev = (index) => {
-        items.forEach((item, i) => {
-            gsap.to(item, {
-                xPercent: "+=100", // mover cada item 100px a la derecha
-                duration: 0.5,
-                ease: "power2.out",
-                onComplete: () => {
-                    isCarruselPro = false;
-                }
-            });
-        });
-    };
-
-    const showSlidePrev2 = (index) => {
-        console.log("s")
-        items.forEach((item, i) => {
-            gsap.to(item, {
-                xPercent: "+=70", // mover cada item 100px a la derecha
-                duration: 0.5,
-                ease: "power2.out",
-                onComplete: () => {
-                    isCarruselPro = false;
-                }
-            });
-        });
-    };
-
-    document.getElementById("btnNext").addEventListener("click", () => {
-        console.log(currentIndex)
-        console.log(totalCards - 1)
-        console.log(isCarruselPro)
-
-
-
-        if (currentIndex <= totalCards - 1) {
-            if (!isCarruselPro) {
-                isCarruselPro = true;
-                currentIndex++;
-                if (currentIndex > 1) {
-                    showSlideNext2(currentIndex);
-                } else {
-                    showSlideNext(currentIndex);
-                }
-            }
-        }
-
-
-    });
-
-    document.getElementById("btnPrev").addEventListener("click", () => {
-        console.log(">>", currentIndex)
-
-        if (currentIndex > 0) {
-            if (!isCarruselPro) {
-                isCarruselPro = true;
-                if (currentIndex > 1) {
-                    showSlidePrev(currentIndex);
-                } else {
-                    showSlidePrev2(currentIndex);
-                }
-                currentIndex--;
-            }
-
-
-        }
-
-    });
-
-    function AnimarCarruselPro() {
-        items.forEach((item, i) => {
-            gsap.to(item, {
-                xPercent: "+=70", // mover cada item 100px a la derecha
-                duration: 0.5,
-                ease: "power2.out"
-            });
-        });
-    }
-
-
-
-    function setupAnimation3() {
-
-        const device = getDeviceType();
-
-        console.log(device)
-
-        switch (device) {
-
-            case "desktop":
-                AnimarCarruselPro()
-                break;
-        }
-    }
-
-    // Ejecutar al cargar
-    setupAnimation3();
-
-    // fin del carrusel de pro
 
 
 
