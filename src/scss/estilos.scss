@@ -100,7 +100,9 @@ body {
     overflow-x: hidden;
 }
 
-
+a {
+    text-decoration: none;
+}
 
 
 .navContainer {
@@ -124,7 +126,7 @@ body {
                 justify-content: center;
 
                 .logoMenu {
-                    width: 60px;
+                    width: 40px;
 
                     a {
                         text-decoration: none;
@@ -132,7 +134,7 @@ body {
                     }
 
                     img {
-                        width: 100%;
+                        width: 85%;
                         height: auto;
                         object-fit: contain;
                     }
@@ -656,31 +658,53 @@ body {
     overflow: hidden;
 
     .gridContainer {
-        height: 650px;
+        height: auto;
         display: grid;
-        grid-template-columns: repeat(12, 1fr);
+        grid-template-columns: repeat(4, 1fr);
         gap: 1rem;
+
+        @media screen and (min-width: 992px) {
+            grid-template-columns: repeat(12, 1fr);
+            height: 650px;
+        }
 
         @media screen and (min-width: 1400px) {
             height: 780px;
         }
 
         >div {
-            height: 650px;
+            height: auto;
             box-sizing: border-box;
+
+            @media screen and (min-width: 992px) {
+                height: 650px;
+            }
 
             @media screen and (min-width: 1400px) {
                 height: 780px;
             }
 
             &:nth-child(2) {
-                grid-column: 4 / span 4;
+                grid-column: 3 / -1;
+                height: 350px;
+
+                @media screen and (min-width: 992px) {
+                    grid-column: 4 / span 4;
+                    height: 100%;
+                }
 
                 .fondoProductos {
-                    height: 650px;
+                    height: 350px;
                     position: relative;
-                    left: -2vw;
-                    width: 109%;
+                    left: 0;
+                    width: 108%;
+
+                    @media screen and (min-width: 992px) {
+                        height: 650px;
+                        left: -2vw;
+                        width: 109%;
+
+                    }
 
                     @media screen and (min-width: 1400px) {
                         height: 780px;
@@ -699,7 +723,7 @@ body {
                         .titularContenedor {
                             position: relative;
                             z-index: 10;
-                            padding: 9rem 0 0 1rem;
+                            padding: 3rem 0 0 1rem;
                             display: inline-block;
 
                             @media screen and (min-width: 992px) {
@@ -714,7 +738,7 @@ body {
                                 font-family: "Poppins", sans-serif;
                                 font-weight: 500;
                                 font-style: italic;
-                                font-size: 1.25rem;
+                                font-size: .75rem;
                                 line-height: 1em;
                                 color: white;
                                 text-align: left;
@@ -732,19 +756,12 @@ body {
 
 
 
-                                br {
-                                    display: none;
-
-                                    @media screen and (min-width: 992px) {
-                                        display: block;
-                                    }
-                                }
                             }
 
                             h2 {
                                 font-family: 'ROUND 8 FIVE';
                                 font-style: italic;
-                                font-size: 5.5rem;
+                                font-size: 2.5rem;
                                 color: white;
                                 line-height: .85em;
 
@@ -783,33 +800,50 @@ body {
             }
 
             &:nth-child(3) {
-                grid-column: 8 / -1;
+                grid-column: 1 / -1;
+
+                @media screen and (min-width: 992px) {
+                    grid-column: 8 / -1;
+                }
 
                 .viewProduct {
                     display: flex;
                     justify-content: center;
                     align-items: center;
                     flex-direction: column;
-                    height: 100%;
-                    height: 650px;
+                    height: 450px;
+
+                    @media screen and (min-width: 992px) {
+                        height: 650px;
+                    }
 
                     @media screen and (min-width: 1400px) {
                         height: 780px;
                     }
 
                     img {
-                        width: 500px;
-                        height: auto;
+                        width: 100%;
+                        height: 100%;
                         object-fit: contain;
+
+                        @media screen and (min-width: 992px) {
+                            width: 500px;
+                            height: auto;
+                        }
                     }
                 }
 
             }
 
             &:nth-child(1) {
-                grid-column: 1 / span 3;
+                grid-column: 1 / span 2;
                 width: 100%;
-                height: 100%;
+                height: 350px;
+
+                @media screen and (min-width: 992px) {
+                    grid-column: 1 / span 3;
+                    height: 100%;
+                }
 
                 figure {
                     margin: 0;
@@ -838,34 +872,48 @@ body {
     overflow: hidden;
 
     .gridContainer {
-        height: 650px;
+        height: auto;
         display: grid;
-        grid-template-columns: repeat(12, 1fr);
+        grid-template-columns: repeat(4, 1fr);
         gap: 1rem;
 
-        @media screen and (min-width: 1400px) {
-            height: 780px;
+        @media screen and (min-width: 992px) {
+            grid-template-columns: repeat(12, 1fr);
+            height: 650px;
         }
 
         >div {
-            height: 650px;
+            height: auto;
             box-sizing: border-box;
+
+            @media screen and (min-width: 992px) {
+                height: 650px;
+            }
 
             @media screen and (min-width: 1400px) {
                 height: 780px;
             }
 
             &:nth-child(2) {
-                grid-column: 4 / span 4;
+                grid-column: 3 / -1;
+                height: 350px;
+
+                @media screen and (min-width: 992px) {
+                    grid-column: 4 / span 4;
+                    height: 100%;
+                }
 
                 .fondoProductos {
-                    height: 650px;
+                    height: 350px;
                     position: relative;
-                    left: -2vw;
-                    width: 109%;
+                    left: 0;
+                    width: 108%;
 
-                    @media screen and (min-width: 1400px) {
-                        height: 780px;
+                    @media screen and (min-width: 992px) {
+                        height: 650px;
+                        left: -2vw;
+                        width: 109%;
+
                     }
 
                     .contenedorFondoProducto {
@@ -881,7 +929,7 @@ body {
                         .titularContenedor {
                             position: relative;
                             z-index: 10;
-                            padding: 9rem 0 0 1rem;
+                            padding: 3rem 0 0 1rem;
                             display: inline-block;
 
                             @media screen and (min-width: 992px) {
@@ -896,7 +944,7 @@ body {
                                 font-family: "Poppins", sans-serif;
                                 font-weight: 500;
                                 font-style: italic;
-                                font-size: 1.25rem;
+                                font-size: .75rem;
                                 line-height: 1em;
                                 color: white;
                                 text-align: left;
@@ -914,19 +962,13 @@ body {
 
 
 
-                                br {
-                                    display: none;
 
-                                    @media screen and (min-width: 992px) {
-                                        display: block;
-                                    }
-                                }
                             }
 
                             h2 {
                                 font-family: 'ROUND 8 FIVE';
                                 font-style: italic;
-                                font-size: 5.5rem;
+                                font-size: 2.5rem;
                                 color: white;
                                 line-height: .85em;
 
@@ -965,7 +1007,11 @@ body {
             }
 
             &:nth-child(3) {
-                grid-column: 8 / -1;
+                grid-column: 1 / -1;
+
+                @media screen and (min-width: 992px) {
+                    grid-column: 8 / -1;
+                }
 
 
                 .viewProduct {
@@ -973,25 +1019,40 @@ body {
                     justify-content: center;
                     align-items: center;
                     flex-direction: column;
-                    height: 650px;
+
+                    height: 450px;
+
+                    @media screen and (min-width: 992px) {
+                        height: 650px;
+                    }
 
                     @media screen and (min-width: 1400px) {
                         height: 780px;
                     }
 
                     img {
-                        width: 500px;
-                        height: auto;
+                        width: 100%;
+                        height: 100%;
                         object-fit: contain;
+
+                        @media screen and (min-width: 992px) {
+                            width: 500px;
+                            height: auto;
+                        }
                     }
                 }
 
             }
 
             &:nth-child(1) {
-                grid-column: 1 / span 3;
+                grid-column: 1 / span 2;
                 width: 100%;
-                height: 100%;
+                height: 350px;
+
+                @media screen and (min-width: 992px) {
+                    grid-column: 1 / span 3;
+                    height: 100%;
+                }
 
                 figure {
                     margin: 0;
@@ -1012,30 +1073,118 @@ body {
     }
 }
 
+.sectionBeneficiosMovil {
+    display: block;
+
+    @media screen and (min-width: 992px) {
+        display: none;
+    }
+
+    .headerBeneficio {
+        background: url("../images/beneficiobgM.webp");
+        background-size: cover;
+        background-position: center;
+        width: 100%;
+        height: 340px;
+        position: relative;
+
+        h5 {
+            font-size: 4rem;
+            color: white;
+            font-family: 'Round8Four', sans-serif;
+            font-weight: inherit;
+            text-align: center;
+            line-height: .9em;
+            position: absolute;
+            bottom: 1rem;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+        }
+
+    }
+
+    .bodyBeneficio {
+        padding: 6rem 0 3rem;
+        background: url("../images/bgBeneficioM.webp");
+        background-size: contain;
+        background-repeat: repeat;
+        background-position: center;
+
+        h4 {
+            font-size: 8.75rem;
+            color: $rojo;
+            font-family: 'Round8Four', sans-serif;
+            font-weight: inherit;
+            text-align: center;
+            line-height: .9em;
+        }
+
+        .listaBeneficio {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            >div {
+                &:nth-child(1) {
+                    margin-bottom: 1.5rem;
+
+                    p {
+                        color: white;
+                        font-family: "Poppins", sans-serif;
+                        font-weight: 500;
+                        font-size: 1rem;
+                        line-height: 1em;
+                        text-align: center;
+                        padding: 2rem 0 1rem;
+                        margin: 0;
+                    }
+                }
+            }
+
+            .iconBene {
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                gap: 1rem;
+                margin-bottom: 2rem;
+
+                img {
+                    object-fit: contain;
+                    width: 92px;
+                }
+
+                p {
+                    color: white;
+                    font-family: "Poppins", sans-serif;
+                    font-weight: 500;
+                    font-size: 1rem;
+                    line-height: 1em;
+                    text-align: center;
+                }
+            }
+        }
+    }
+}
+
 .sectionBeneficios {
     background: url("../images/beneficiobgM.webp");
     background-size: cover;
     background-position: center;
     width: 100%;
     height: 960px;
+    display: none;
 
     @media screen and (min-width: 992px) {
         background: url("../images/beneficiobg.webp");
         background-size: cover;
         background-position: center;
+
+        display: block;
+
     }
 
-    // @media screen and (min-width: 992px) {
-    //     height: 600px;
-    // }
 
-    // @media screen and (min-width: 1400px) {
-    //     height: 700px;
-    // }
-
-    // @media screen and (min-width: 1600px) {
-    //     height: 900px;
-    // }
 
     .infoBeneficios {
         padding-top: 8rem;
@@ -1382,9 +1531,35 @@ body {
     .seccionProposito {
         display: flex;
         justify-content: flex-start;
-        height: 500px;
+        height: 320px;
         position: relative;
         z-index: 30;
+
+        @media screen and (min-width: 992px) {
+            height: 500px;
+        }
+
+        &.bg3 {
+            >div {
+                &:nth-child(2) {
+                    background: url("../images/bgpropositio3.webp");
+                    background-repeat: repeat;
+                    background-position: center;
+                    background-size: cover;
+                }
+            }
+        }
+
+        &.bg4 {
+            >div {
+                &:nth-child(2) {
+                    background: url("../images/bgpropositio4.webp");
+                    background-repeat: repeat;
+                    background-position: center;
+                    background-size: cover;
+                }
+            }
+        }
 
         &.bgDayInterna {
             >div {
@@ -1430,7 +1605,11 @@ body {
                 .rejaContainer {
                     position: absolute;
                     bottom: 0;
-                    left: 0;
+                    left: -2rem;
+
+                    @media screen and (min-width: 992px) {
+                        left: 0rem;
+                    }
 
                     img {
                         width: 87px;
@@ -1452,31 +1631,41 @@ body {
                     >div {
                         grid-column: 2 / -1;
                         display: flex;
-                        justify-content: center;
+                        justify-content: flex-start;
+                        margin-left: -2rem;
 
                         @media screen and (min-width: 768px) {
                             grid-column: 2 / -1;
-                            justify-content: flex-start;
                             padding-left: 2rem;
                         }
 
                         @media screen and (min-width: 992px) {
                             padding-left: 0rem;
+                            margin-left: 0rem;
+                            justify-content: flex-start;
                         }
 
                         .infoProp {
                             img {
-                                width: 180px;
+                                width: 80px;
                                 height: auto;
                                 object-fit: contain;
+
+                                @media screen and (min-width: 992px) {
+                                    width: 180px;
+                                }
                             }
 
                             h3 {
                                 font-family: 'Round8Four';
-                                font-size: 5.625rem;
+                                font-size: 2.75rem;
                                 color: white;
                                 line-height: .85em;
                                 margin-top: 2rem;
+
+                                @media screen and (min-width: 992px) {
+                                    font-size: 5.625rem;
+                                }
 
                                 span {
                                     color: $rojo;
@@ -1499,12 +1688,20 @@ body {
     }
 
     .seccionInformacionBox {
-        padding: 5rem 0 5rem 0;
+        padding: 3rem 0 5rem 0;
         position: relative;
         z-index: 11;
 
         @media screen and (min-width: 992px) {
             padding: 15rem 0 10rem 0;
+        }
+
+        &.separacionYou {
+            padding: 0rem 0 5rem 0;
+
+            @media screen and (min-width: 992px) {
+                padding: 7rem 0 10rem 0;
+            }
         }
 
         .flechaTBox {
@@ -1534,9 +1731,19 @@ body {
                 font-weight: 500;
                 font-size: 1rem;
                 text-align: center;
+                padding: 0 3rem;
+
+                br {
+                    display: none;
+
+                    @media screen and (min-width: 992px) {
+                        display: block;
+                    }
+                }
 
                 @media screen and (min-width: 992px) {
                     font-size: 1.375rem;
+                    padding: 0;
                 }
             }
         }
@@ -1549,6 +1756,8 @@ body {
             @media screen and (min-width: 992px) {
                 grid-template-columns: repeat(12, 1fr);
             }
+
+
 
             >div {
                 width: 100%;
@@ -1604,6 +1813,48 @@ body {
                             }
                         }
                     }
+
+                    &.grande {
+                        @media screen and (min-width: 992px) {
+                            grid-column: 2 / span 3;
+                        }
+
+                        >div {
+                            &:nth-child(1) {
+                                h2 {
+                                    font-size: 9rem;
+
+                                    @media screen and (min-width: 992px) {
+                                        font-size: 12rem;
+                                    }
+                                }
+                            }
+
+                            &:last-child {
+                                img {
+                                    width: 16px;
+
+                                    @media screen and (min-width: 992px) {
+                                        width: 21px;
+                                    }
+                                }
+
+                                h4 {
+                                    font-size: 0.75rem;
+                                    top: 6rem;
+                                    left: -1.25rem;
+
+                                    @media screen and (min-width: 992px) {
+                                        font-size: 0.875rem;
+                                        top: 7rem;
+                                        left: -1.5rem;
+
+                                    }
+                                }
+                            }
+                        }
+
+                    }
                 }
 
                 &:nth-child(2) {
@@ -1629,6 +1880,7 @@ body {
                         font-size: 1rem;
                         text-align: center;
                         margin-top: 1rem;
+                        text-transform: uppercase;
                     }
                 }
 
@@ -1683,6 +1935,8 @@ body {
                         margin-top: 1rem;
                     }
                 }
+
+
             }
 
             &.bgDayInterna {
@@ -1719,7 +1973,7 @@ body {
     .internaHeaderContainer {
         position: relative;
         width: 100%;
-        height: 590px;
+        height: 400px;
         z-index: 11;
 
         @media screen and (min-width: 992px) {
@@ -1801,13 +2055,21 @@ body {
             }
 
             &.Der {
-                top: 18rem;
+                top: 7rem;
                 right: 2vw;
+
+                @media screen and (min-width: 992px) {
+                    top: 18rem;
+                }
             }
 
             &.Izq {
-                top: 28rem;
+                top: 16rem;
                 left: 2vw;
+
+                @media screen and (min-width: 992px) {
+                    top: 28rem;
+                }
 
                 img {
                     width: 70px;
@@ -1824,7 +2086,7 @@ body {
         .infoHeaderContainer {
             position: relative;
             z-index: 10;
-            padding: 10rem 0 0;
+            padding: 5rem 0 0;
 
             @media screen and (min-width: 992px) {
                 padding: 11.5rem 0 0;
@@ -1832,7 +2094,7 @@ body {
 
             h1 {
                 font-family: "Poppins", sans-serif;
-                font-size: 1rem;
+                font-size: .75rem;
                 font-style: italic;
                 font-weight: 500;
                 color: white;
@@ -1849,7 +2111,7 @@ body {
             h2 {
                 font-family: "Round8Four", sans-serif;
                 font-weight: normal;
-                font-size: 6rem;
+                font-size: 3rem;
                 color: white;
                 line-height: .85em;
                 margin: 0;
@@ -1872,10 +2134,10 @@ body {
 
         .productoHeaderImg {
             position: absolute;
-            bottom: -9rem;
+            bottom: -2rem;
             left: 43%;
             transform: translateX(-50%);
-            width: 480px;
+            width: 280px;
 
             @media screen and (min-width: 992px) {
                 bottom: -18rem;
@@ -1893,6 +2155,29 @@ body {
                 bottom: -19rem;
                 left: 47.5%;
                 width: 870px;
+            }
+
+            &.bgPosYou {
+                bottom: -1.5rem;
+                left: 46%;
+
+                @media screen and (min-width: 992px) {
+                    bottom: -9rem;
+                    left: 47%;
+                    width: 700px;
+                }
+
+                @media screen and (min-width: 1200px) {
+                    bottom: -14rem;
+                    left: 48%;
+                    width: 800px;
+                }
+
+                @media screen and (min-width: 1400px) {
+                    bottom: -15rem;
+                    left: 47.5%;
+                    width: 870px;
+                }
             }
 
             img {
@@ -1932,12 +2217,24 @@ body {
 }
 
 .seccionFamilia {
-    padding: 2rem 0 4rem;
+    padding: 2rem 0 0rem;
+
+    @media screen and (min-width: 992px) {
+        padding: 2rem 0 4rem;
+    }
 
     .gridContainer {
         display: grid;
-        grid-template-columns: repeat(12, 1fr);
-        gap: 1rem;
+        // grid-template-columns: repeat(12, 1fr);
+        // gap: 1rem;
+
+        grid-template-columns: repeat(1, 1fr);
+        /* 4 columnas */
+        grid-template-rows: repeat(2, auto);
+
+        @media screen and (min-width: 992px) {
+            grid-template-columns: repeat(4, 1fr);
+        }
 
         .items1 {
             grid-column: 1 / -1;
@@ -1945,7 +2242,7 @@ body {
             position: relative;
 
             @media screen and (min-width: 992px) {
-                grid-column: 1 / span 3;
+                grid-column: 1 / span 1;
             }
 
             .boxReja {
@@ -1975,24 +2272,30 @@ body {
 
         .items2 {
             @media screen and (min-width: 992px) {
-                grid-column: 4 / span 3;
+                grid-column: 2 / span 1;
             }
         }
 
         .items3 {
             @media screen and (min-width: 992px) {
-                grid-column: 7 / span 3;
+                grid-column: 3 / span 1;
             }
         }
 
         .items4 {
             @media screen and (min-width: 992px) {
-                grid-column: 10 / -1;
+                grid-column: 4 / -1;
             }
         }
 
-        a {
+
+        >a {
+            display: none;
             text-decoration: none;
+
+            @media screen and (min-width: 992px) {
+                display: inline-block;
+            }
         }
 
         .cardBody {
@@ -2045,11 +2348,26 @@ body {
 
     }
 
+    .carruselInterna {
+        height: 500px;
+        display: block;
+        overflow: hidden;
+
+        @media screen and (min-width: 992px) {
+            display: none;
+
+        }
+    }
+
     &.bgDayInterna {
         .gridContainer {
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(1, 1fr);
             /* 4 columnas */
             grid-template-rows: repeat(2, auto);
+
+            @media screen and (min-width: 992px) {
+                grid-template-columns: repeat(3, 1fr);
+            }
 
             /* 2 filas */
             .cardFooter {
@@ -2107,6 +2425,14 @@ body {
                     }
                 }
 
+            }
+
+            >a {
+                display: none;
+
+                @media screen and (min-width: 992px) {
+                    display: inline-block;
+                }
             }
 
 
@@ -2193,36 +2519,53 @@ body {
                 .imgRejaContainer {
                     position: absolute;
                     top: 0px;
-                    left: 0rem;
+                    left: -4rem;
                     width: 98px;
                     height: auto;
                     object-fit: contain;
                     z-index: 3;
+
+                    @media screen and (min-width: 992px) {
+                        left: 0rem;
+                    }
                 }
 
                 .infoBox {
-                    padding-left: 7.5rem;
+                    padding-left: 3rem;
                     position: relative;
                     z-index: 3;
 
+                    @media screen and (min-width: 992px) {
+                        padding-left: 7.5rem;
+                    }
+
                     h3 {
                         font-family: 'Round8Four';
-                        font-size: 5.625rem;
+                        font-size: 3rem;
                         color: white;
                         line-height: .85em;
-                        margin-top: 2rem;
+                        margin-top: 12rem;
 
                         span {
                             color: $moradoOscuro;
+                        }
+
+                        @media screen and (min-width: 992px) {
+                            font-size: 5.625rem;
+                            margin-top: 2rem;
                         }
                     }
 
                     p {
                         font-family: 'Poppins';
                         font-style: italic;
-                        font-size: 1.125rem;
+                        font-size: .75rem;
                         color: white;
                         line-height: 1em;
+
+                        @media screen and (min-width: 992px) {
+                            font-size: 1.125rem;
+                        }
                     }
 
                     &.bannerProInterna {
@@ -2540,7 +2883,30 @@ footer {
 }
 
 .owl-carousel .owl-nav img {
-    width: 40px;
+    width: 30px;
     height: auto;
     cursor: pointer;
+
+    @media screen and (min-width: 992px) {
+        width: 40px;
+    }
+}
+
+.owl-dots {
+    display: none !important;
+}
+
+.videMainBox {
+    width: 100%;
+    height: 400px;
+
+    @media screen and (min-width: 992px) {
+        height: 90vh;
+    }
+}
+
+.videMainBox video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
