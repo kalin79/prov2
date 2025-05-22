@@ -1,4 +1,37 @@
+const video = document.getElementById('miVideo');
+video.addEventListener('ended', () => {
+    video.pause();
+    video.currentTime = video.duration; // asegúrate de que se quede en el último frame
+});
+
 $(document).ready(function () {
+
+    const viewMenu = document.querySelector('.hambMenu');
+    const btnCloseMenu = document.querySelector('.btnClose');
+    const mantoMenu = document.querySelector('.mainMobileContainer');
+
+    const headerBtnContainer = document.querySelectorAll('.headerBtnContainer');
+
+    headerBtnContainer.forEach(div => {
+        div.addEventListener('click', () => {
+            const submenu = div.nextElementSibling;
+            // Verificar si es realmente un .submenuContainer
+            if (submenu && submenu.classList.contains('submenuContainer')) {
+                // Alternar clase para mostrar u ocultar
+                submenu.classList.toggle('active');
+            }
+        });
+    });
+
+    viewMenu.addEventListener('click', () => {
+        mantoMenu.classList.toggle('active');
+    })
+
+    btnCloseMenu.addEventListener('click', () => {
+        mantoMenu.classList.toggle('active');
+    })
+
+
     gsap.set(".navContainer .logoMenu", { y: -200 })
 
     gsap.fromTo(".navContainer", {

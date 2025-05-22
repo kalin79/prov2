@@ -1,5 +1,44 @@
 
 $(document).ready(function () {
+    const viewMenu = document.querySelector('.hambMenu');
+    const btnCloseMenu = document.querySelector('.btnClose');
+    const mantoMenu = document.querySelector('.mainMobileContainer');
+
+    const headerBtnContainer = document.querySelectorAll('.headerBtnContainer');
+
+    headerBtnContainer.forEach(div => {
+        div.addEventListener('click', () => {
+            const submenu = div.nextElementSibling;
+            // Verificar si es realmente un .submenuContainer
+            if (submenu && submenu.classList.contains('submenuContainer')) {
+                // Alternar clase para mostrar u ocultar
+                submenu.classList.toggle('active');
+            }
+        });
+    });
+
+    viewMenu.addEventListener('click', () => {
+        mantoMenu.classList.toggle('active');
+    })
+
+    btnCloseMenu.addEventListener('click', () => {
+        mantoMenu.classList.toggle('active');
+    })
+    gsap.set(".navContainer .logoMenu", { y: -200 });
+    gsap.fromTo(".navContainer", {
+        opacity: 0,
+    }, {
+        opacity: 1,
+        onComplete: () => {
+            gsap.fromTo(".navContainer .logoMenu", {
+                y: -200
+            }, {
+                y: 0
+            })
+        }
+    }, 6);
+
+
     $(".owlCarruselInterna1").owlCarousel({
         loop: true,
         margin: 10,
@@ -70,6 +109,28 @@ function mostrarAcordion(id, idClose) {
         tabBtnActive.classList.add("active");
     }
 }
+
+function mostrarAcordion2(id) {
+
+    let tabActive = document.querySelector(`.tab-${id}`);
+    let tabBtnActive = document.querySelector(`.tabBtn-${id}`);
+    let CerrarTodos = document.querySelectorAll('.seccionTabsInfo .bodyTabs');
+    let CerrarTodosBTN = document.querySelectorAll('.seccionTabsInfo button')
+
+    CerrarTodos.forEach(content => {
+        content.classList.remove('active');
+    });
+
+    CerrarTodosBTN.forEach(content => {
+        content.classList.remove('active');
+    });
+
+    tabActive.classList.add("active");
+    tabBtnActive.classList.add("active");
+}
+
+
+
 document.addEventListener("DOMContentLoaded", function () {
     // alert(2);
 
